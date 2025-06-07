@@ -203,6 +203,8 @@
   line-height: 1.5;
   margin-bottom: 1.5rem;
   height: 45px;
+
+  overflow: hidden;
 }
 
 .menu-footer {

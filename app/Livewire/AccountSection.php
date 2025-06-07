@@ -40,7 +40,6 @@ class AccountSection extends Component
         $this->originalCpf = $user->cpf ?? '';
         $this->originalPhone = $user->phone ?? '';
         $this->originalBirthDate = $user->birthDate ?? '';
-
     }
 
     public function setTab(string $tab)
@@ -50,31 +49,38 @@ class AccountSection extends Component
 
     public function save()
     {
-        $user = Auth::user();
+        try {
+            $user = Auth::user();
 
-        $this->validate([
-            'name' => 'required|string|max:255',
-            //'email' => 'required|email|unique:users,email,' . $user->id,
-            'cpf'=>'nullable|string|max:11',
-            'phone'=>'nullable|string',
-            'birthDate'=>'nullable|date',
-        ]);
+            $this->validate([
+                'name' => 'required|string|max:255',
+                //'email' => 'required|email|unique:users,email,' . $user->id,
+                'cpf' => 'nullable|string|max:11',
+                'phone' => 'nullable|string',
+                'birthDate' => 'nullable|date',
+            ]);
 
-        $user->update([
-            'name' => $this->name,
-            //'email' => $this->email,
-            'cpf'=>$this->cpf,
-            'phone'=>$this->phone,
-            'birthDate'=>$this->birthDate,
-        ]);
+            $user->update([
+                'name' => $this->name,
+                //'email' => $this->email,
+                'cpf' => $this->cpf,
+                'phone' => $this->phone,
+                'birthDate' => $this->birthDate,
+            ]);
 
-        $this->originalName = $this->name;
-        //$this->originalEmail = $this->email;
-        $this->originalCpf = $this->cpf;
-        $this->originalPhone = $this->phone;
-        $this->originalBirthDate = $this->birthDate;
+            $this->originalName = $this->name;
+            //$this->originalEmail = $this->email;
+            $this->originalCpf = $this->cpf;
+            $this->originalPhone = $this->phone;
+            $this->originalBirthDate = $this->birthDate;
 
-        session()->flash('success', 'Dados atualizados com sucesso.');
+            session()->flash('success', 'Dados atualizados com sucesso!');
+
+            $this->dispatch('refreshPage');
+            
+        } catch (\Exception $e) {
+            session()->flash('error', 'Erro ao atualizar dados. Tente novamente.');
+        }
     }
 
     public function cancel()
