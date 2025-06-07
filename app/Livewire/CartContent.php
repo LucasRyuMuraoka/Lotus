@@ -170,6 +170,8 @@ class CartContent extends Component
 
         $this->dispatch('cart-updated');
         session()->flash('success', 'Pedido finalizado com sucesso!');
+
+        return redirect()->to(route('conta', ['tab' => 'pedidos']));
     }
 
     public function render()

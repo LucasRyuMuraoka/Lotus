@@ -3,11 +3,13 @@
 namespace App\Livewire;
 
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 
 class AccountSection extends Component
 {
 
+    #[Url]
     public string $tab = 'perfil';
 
     public string $name;
@@ -38,6 +40,7 @@ class AccountSection extends Component
         $this->originalCpf = $user->cpf ?? '';
         $this->originalPhone = $user->phone ?? '';
         $this->originalBirthDate = $user->birthDate ?? '';
+
     }
 
     public function setTab(string $tab)
