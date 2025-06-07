@@ -49,7 +49,7 @@
                         <label for="tipo-usuario">Tipo de Usuário:</label>
                         <select id="tipo-usuario" name="role" required>
                             <option value="customer" {{ $user->role === 'customer' ? 'selected' : '' }}>Cliente</option>
-                            <option value="admin" {{ $user->role === 'admin' ? selected : '' }}>Administrador</option>
+                            <option value="admin" {{ $user->role === 'admin' ? 'selected' : '' }}>Administrador</option>
                         </select>
                     </div>
                     <div class="form-group">
