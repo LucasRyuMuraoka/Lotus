@@ -47,7 +47,9 @@
             <li>
                 <span>{{ $user->name }}</span>
                 <div class="acoes">
-                    <button class="editar">Editar</button> |
+                    <button class="editar"
+                        @click="window.location.href='/users/{{ $user->id }}/edit'">
+                        Editar</button> |
                     <button class="excluir"
                         @click="if (confirm('Tem certeza que deseja excluir este usuário?')) { $wire.delete({{ $user->id }}) }">
                         Excluir

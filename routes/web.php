@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
@@ -27,6 +28,8 @@ Route::middleware(['auth', AdminMiddleware::class])->group(function () {
     Route::view('/usuarios', 'adm_usuarios')->name('usuarios');
     Route::put('/products/{product}', [ProductController::class, 'update']);
     Route::get('/products/{product}/edit', [ProductController::class, 'edit']);
+    Route::put('/users/{user}', [UserController::class, 'update']);
+    Route::get('/users/{user}/edit', [UserController::class, 'edit']);
 });
 
 // Route::view('dashboard', 'dashboard')->middleware(['auth', AdminMiddleware::class])->name('dashboard');
