@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <a href="/cardapio.html" class="s02-button">Confira nosso Cardápio</a>
+        <a href="{{ route('cardapio') }}" class="s02-button">Confira nosso Cardápio</a>
 
         <!-- Elemento Principal - Envolve todo o Slide -->
         <div class="swiper-container">
