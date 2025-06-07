@@ -27,7 +27,7 @@
 
     <div class="menu-filter">
         <button class="filter-btn {{ $filter === 'todos' ? 'active' : '' }}" wire:click="setFilter('todos')" {{-- data-filter="todos" --}}>Todos</button>
-        <button class="filter-btn {{ $filter === 'sushi' ? 'active' : '' }}" wire:click="setFilter('sushi')" {{-- data-filter="sushi" --}}>Sushi</button>
+        <button class="filter-btn {{ $filter === 'recomendados' ? 'active' : '' }}" wire:click="setFilter('recomendados')" {{-- data-filter="sushi" --}}>Recomendados</button>
         <button class="filter-btn {{ $filter === 'sashimi' ? 'active' : '' }}" wire:click="setFilter('sashimi')" {{-- data-filter="sashimi" --}}>Sashimi</button>
         <button class="filter-btn {{ $filter === 'combinados' ? 'active' : '' }}" wire:click="setFilter('combinados')" {{-- data-filter="combinados" --}}>Combinados</button>
         <button class="filter-btn {{ $filter === 'bebidas' ? 'active' : '' }}" wire:click="setFilter('bebidas')" {{-- data-filter="bebidas" --}}>Bebidas</button>

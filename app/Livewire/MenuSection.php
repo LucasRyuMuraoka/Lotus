@@ -21,11 +21,18 @@ class MenuSection extends Component
         $query = Product::with('category');
 
         if ($this->search !== '') {
+
             $query->where(function ($q) {
                 $q->where('name', 'like', '%' . $this->search . '%')
                     ->orWhere('description', 'like', '%' . $this->search . '%');
             });
         } elseif ($this->filter !== 'todos') {
+
+            if($this->filter === 'recomendados'){
+
+                return $query->latest()->take(5)->get();
+            }
+
             $query->whereHas('category', fn($q) => $q->where('name', $this->filter));
         }
 
@@ -34,14 +41,6 @@ class MenuSection extends Component
 
     public function render()
     {
-
-        //$items = Product::with('category');
-
-        //if ($this->filter !== 'todos') {
-        //    $items->whereHas('category', function ($query) {
-        //        $query->where('name', $this->filter);
-        //    });
-        //}
 
         return view('livewire.menu-section', [
             'items' => $this->getItemsProperty(),
