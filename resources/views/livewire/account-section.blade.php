@@ -55,7 +55,7 @@
                         <div class="form-row">
                             <div class="form-group full-width">
                                 <label for="email">E-mail*</label>
-                                <input wire:model.defer="email" type="email" id="email" name="email" value="{{ $email }}" required />
+                                <input wire:model.defer="email" type="email" id="email" name="email" value="{{ $email }}" required disabled />
                                 @error('email') <span class="error">{{ $message }}</span> @enderror
                             </div>
                         </div>

@@ -54,7 +54,7 @@ class AccountSection extends Component
 
         $this->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email,' . $user->id,
+            //'email' => 'required|email|unique:users,email,' . $user->id,
             'cpf'=>'nullable|string|max:11',
             'phone'=>'nullable|string',
             'birthDate'=>'nullable|date',
@@ -62,14 +62,14 @@ class AccountSection extends Component
 
         $user->update([
             'name' => $this->name,
-            'email' => $this->email,
+            //'email' => $this->email,
             'cpf'=>$this->cpf,
             'phone'=>$this->phone,
             'birthDate'=>$this->birthDate,
         ]);
 
         $this->originalName = $this->name;
-        $this->originalEmail = $this->email;
+        //$this->originalEmail = $this->email;
         $this->originalCpf = $this->cpf;
         $this->originalPhone = $this->phone;
         $this->originalBirthDate = $this->birthDate;
@@ -80,7 +80,7 @@ class AccountSection extends Component
     public function cancel()
     {
         $this->name = $this->originalName;
-        $this->email = $this->originalEmail;
+        //$this->email = $this->originalEmail;
         $this->cpf = $this->originalCpf;
         $this->phone = $this->originalPhone;
         $this->birthDate = $this->originalBirthDate;
