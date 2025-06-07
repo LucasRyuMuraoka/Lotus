@@ -1,0 +1,89 @@
+.h-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5rem;
+  color: black;
+}
+
+.n-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.n-menu form{
+  display: inline;
+}
+
+.n-menu a {
+  display: block;
+  padding: 1rem;
+  font-family: var(--font-family);
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.n-menu button{
+  background-color: white;
+  border: none;
+  display: block;
+  padding: 1rem;
+  font-family: var(--font-family);
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.n-menu a:hover {
+  color: var(--primary-color);
+}
+
+.n-menu button:hover{
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.n-menu a.active {
+  color: var(--primary-color);
+  position: relative;
+}
+
+.n-menu button.active{
+  color: var(--primary-color);
+  position: relative;
+}
+
+.n-menu a.active:after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.n-menu button.active:after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+@media (max-width: 600px){
+  .h-nav{
+    display: none;
+  }
+}

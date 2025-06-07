@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: 'Inter', sans-serif;
+}
+
+:root{
+  --font-family: 'Inter', sans-serif;
+  --primary-color: #F4322E;
+  --text-light: #FFFFFF;
+  --text-muted: #ffffffa3;
+  --bg-dark: #111111;
+  --bg-darker: #0a0a0a;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --status-preparing: #FFB300;
+  --status-delivery: #2196F3;
+  --status-delivered: #4CAF50;
+  --status-canceled: #F44336;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url('/assets/fonts/Inter-VariableFont.ttf') format('truetype');
+  font-weight: 100 900; 
+  font-style: normal;
+}

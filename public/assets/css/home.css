@@ -1,0 +1,48 @@
+/* Estilo para o conteúdo principal */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  padding: 2rem;
+  background-color: #000000;
+}
+
+/* Container do logo centralizado */
+.logo-container {
+  text-align: center;
+}
+
+/* Estilo do logo centralizado - estado normal */
+.centered-logo {
+  max-width: 800px; /* Aumentado de 600px para 800px */
+  width: 100%;
+  height: auto;
+  /* Apenas inverte as cores escuras para claras */
+  filter: 
+    contrast(150%) 
+    brightness(1.5) 
+    drop-shadow(0 4px 8px rgba(255, 255, 255, 0.1));
+  transition: all 0.3s ease;
+}
+
+.centered-logo:hover {
+  transform: scale(1.05);
+  filter: 
+    contrast(160%) 
+    brightness(1.6) 
+    drop-shadow(0 6px 12px rgba(255, 255, 255, 0.2));
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .centered-logo {
+    max-width: 600px; /* Aumentado de 450px para 600px */
+  }
+}
+
+@media (max-width: 480px) {
+  .centered-logo {
+    max-width: 450px; /* Aumentado de 350px para 450px */
+  }
+}

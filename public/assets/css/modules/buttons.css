@@ -1,0 +1,17 @@
+.s02-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.s02-button:hover {
+  background-color: #d12a26;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(244, 50, 46, 0.3);
+}

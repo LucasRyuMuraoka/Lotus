@@ -1,0 +1,100 @@
+Categoria
+
+Entrada
+Combinados
+Sashimi
+Temaki
+Sobremesas
+Bebidas
+
+
+Produtos
+
+Entrada:
+
+Salada Nagayama
+Descrição : Mix de folhas verdes, kani e salmão
+Preço: R$57,00
+Image - undefined
+
+Couver Especial
+Descrição: Mix de folhas com molho da casa
+Preço:R$35,00
+image - undefined
+
+Naga Salad Tuna
+Descrição: Mix de folhas verdes, kani e atum
+Preço: R$67,00
+image - undefined
+
+Combinados
+
+Naga Premium 1 
+Descrição: 3 Fatias de salmão selado, 3 fatias de atum, 3 fatias de peixe branco do dia, 3 fatias de barriga de salmão, 1 unidade de sushi de polvo temperado, 1 unidade de sushi de salmão selado, 1 unidade de sushi de atum, 1 unidade de sushi de peixe branco do dia, 1 unidade de jô de atum com wakame, 1 unidade de sushi de massago.
+Preço: R$179,00
+
+Naga Case 1 
+Descrição: 08 Fatias de carpaccio de salmão, 03 fatias de salmão, 02 fatias de atum, 01 dupla de batera de salmão, 01 sushi salmão selado, 01 sushi de atum selado, 01 sushi jô salmão e 04 uramaki ebiten.
+Preço:R$159,00
+
+Sushi e Sashimi Tokujo 1 - 21 Peças
+Descrição:
+Combinado com 07 fatias de sashimi de salmão, 05 fatias de sashimi atum, 01 dupla de atum, 01 dupla de salmão, 01 unid jo de salmão, 04 uramaki spicy tuna.
+Preço:R$143,00
+
+Sashimi
+
+Sashimi de salmão - 5 fatias
+Descrição:Salmão fresco, fatiado.
+Preço: R$35,43
+
+Salmão Selado com Gergelim 
+Descrição:Fatias de salmão selada com gergelim.
+Preço:R$45,00
+
+Sashimi de Buri
+Descrição:Fatias de peixe buri
+Preço:R$37,00
+
+Temaki
+
+Temaki de Salmão 
+Descrição:Temaki de salmão batido e arroz.
+Preço:R$38,15
+
+Temaki de Spicy Tuna
+Descrição:Temaki de atum batido, com ovas e tabasco e arroz.
+Preço:R$42,90
+
+Temaki de Filadélfia
+Descrição:Temaki de salmão grelhado, arroz, cream cheese, e ovas de massago.
+Preço:R$34,10
+
+Sobremesa
+
+Mochi Ice Cream
+Descrição:Sorvete de mochi recheado com sorvete.
+Preço:R$13,00
+
+Harumaki
+Descrição:Rolinho primavera.
+Preço:R$18,00
+
+Parfait
+Descrição:camadas de sorvete, granolas, chantilly, cobertos com frutas frescas.
+Preço:R$20,00
+
+Bebida
+Coca-cola (Latinha)
+Preço:R$8,50
+Fanta
+Preço:R$8,50
+Guaraná
+Preço:R$8,50
+
+home - landing page 
+carrinho - 2 page
+Cardapio - 3 page
+Registro - 4 page
+Adm produto - 5 page
+Meus pedidos - 6 page f

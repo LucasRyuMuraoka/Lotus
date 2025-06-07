@@ -1,0 +1,565 @@
+.account-section-hero {
+  width: 100%;
+  height: 300px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://media.istockphoto.com/id/1309563960/pt/foto/japanese-food-at-restaurant-black-background.jpg?s=612x612&w=0&k=20&c=LlmZ7lDR6kYEuDVQ2z3eBuTBDjOmvB7mfGtOmwmZhTk=');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.account-hero-content {
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.account-hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.account-hero-content h1 span {
+  color: var(--primary-color);
+}
+
+.account-hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.c-section-account {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+}
+
+.account-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 1rem;
+}
+
+.account-tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.account-tab-btn a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.account-tab-btn:hover {
+  color: var(--primary-color);
+}
+
+.account-tab-btn.active {
+  color: var(--primary-color);
+}
+
+.account-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+.account-tab-content {
+  display: none;
+}
+
+.account-tab-content.active {
+  display: block;
+}
+
+.orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.orders-header h2 {
+  font-size: 1.8rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.orders-filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.orders-filter label {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.orders-filter select {
+  background-color: var(--card-bg);
+  color: var(--text-light);
+  border: 1px solid var(--card-border);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 30px;
+}
+
+.orders-filter select option {
+  background-color: #333 !important;
+  color: white !important;
+  padding: 10px;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.order-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.order-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--status-preparing);
+  transition: background-color 0.3s ease;
+}
+
+.order-card[data-status="Em preparo"]::before {
+  background-color: var(--status-preparing);
+}
+
+.order-card[data-status="Em entrega"]::before {
+  background-color: var(--status-delivery);
+}
+
+.order-card[data-status="Entregue"]::before {
+  background-color: var(--status-delivered);
+}
+
+.order-card[data-status="Cancelado"]::before {
+  background-color: var(--status-canceled);
+}
+
+.order-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.order-number h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.3rem;
+  color: var(--text-light);
+}
+
+.order-date {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.order-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--status-preparing);
+}
+
+.status-preparing {
+  color: var(--status-preparing);
+}
+
+.status-preparing .status-dot {
+  background-color: var(--status-preparing);
+}
+
+.status-delivery {
+  color: var(--status-delivery);
+}
+
+.status-delivery .status-dot {
+  background-color: var(--status-delivery);
+}
+
+.status-delivered {
+  color: var(--status-delivered);
+}
+
+.status-delivered .status-dot {
+  background-color: var(--status-delivered);
+}
+
+.status-canceled {
+  color: var(--status-canceled);
+}
+
+.status-canceled .status-dot {
+  background-color: var(--status-canceled);
+}
+
+.order-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.order-items p {
+  margin: 0.3rem 0;
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.order-items strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.order-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.order-price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.order-track,
+.order-reorder,
+.order-cancel {
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.order-track {
+  background-color: var(--status-delivery);
+  color: white;
+}
+
+.order-track:hover {
+  background-color: #1976D2;
+  transform: translateY(-2px);
+}
+
+.order-reorder {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.order-reorder:hover {
+  background-color: #d12a26;
+  transform: translateY(-2px);
+}
+
+.order-cancel {
+  background-color: transparent;
+  color: var(--text-light);
+  border: 1px solid var(--status-canceled);
+}
+
+.order-cancel:hover {
+  background-color: var(--status-canceled);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.order-delivery-info,
+.order-prep-info,
+.order-cancel-info,
+.order-rating {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.delivery-time p,
+.delivery-address p,
+.prep-time p,
+.order-cancel-info p,
+.order-rating p {
+  margin: 0 0 0.3rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.delivery-time span,
+.delivery-address span,
+.prep-time span,
+.order-cancel-info span {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.prep-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 50%;
+}
+
+.progress-bar {
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--status-preparing);
+  border-radius: 3px;
+}
+
+.prep-progress span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.c-section-help {
+  background-color: var(--bg-dark);
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.c-section-help::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+}
+
+.account-help-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.account-help-content h2 {
+  font-size: 2.2rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+}
+
+.account-help-content h2 span {
+  color: var(--primary-color);
+}
+
+.account-help-options {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.account-help-option {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 2rem;
+  width: 280px;
+  transition: all 0.3s ease;
+}
+
+.account-help-option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.account-help-icon {
+  margin-bottom: 1.5rem;
+}
+
+.account-help-icon img {
+  filter: invert(1);
+  opacity: 0.8;
+}
+
+.account-help-option h3 {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.account-help-option p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.account-help-btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.account-help-btn:hover {
+  background-color: #d12a26;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(244, 50, 46, 0.3);
+}
+
+.n-menu a.active {
+  color: var(--primary-color);
+  position: relative;
+}
+
+.n-menu a.active:after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+@media (max-width: 992px) {
+  .help-options {
+    gap: 1.5rem;
+  }
+
+  .help-option {
+    width: 240px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .c-section-hero {
+    height: 250px;
+  }
+
+  .account-tabs {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 1.5rem;
+  }
+
+  .tab-btn {
+    flex: 0 0 auto;
+  }
+
+  .order-header,
+  .order-details,
+  .order-delivery-info,
+  .order-prep-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .order-status {
+    margin-top: 0.5rem;
+  }
+
+  .order-actions {
+    align-items: flex-start;
+    margin-top: 1rem;
+  }
+
+  .prep-progress {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .help-option {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .orders-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .help-content h2 {
+    font-size: 1.8rem;
+  }
+}

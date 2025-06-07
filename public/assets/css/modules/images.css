@@ -1,0 +1,43 @@
+.h-logo{
+  width: 9.375rem;
+  max-height: 6.25rem;
+  padding: 1rem;
+}
+
+.s01-img {
+  width: 52rem;
+  height: 40rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+
+.f-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.f-logo img {
+  width: 100px;
+}
+
+.f-social img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.f-social img:hover {
+  transform: scale(1.2);
+}
+
+
+@media (max-width: 600px){
+  .s01-img{
+    display: none;
+  }
+}
