@@ -47,7 +47,9 @@
             <li>
                 <span>{{ $product->name }}</span>
                 <div class="acoes">
-                    <button class="editar">Editar</button> |
+                    <button class="editar"
+                        @click="window.location.href='/products/{{ $product->id }}/edit'">
+                        Editar</button> |
                     <button class="excluir"
                         @click="if (confirm('Tem certeza que deseja excluir este prato?')) { $wire.delete({{ $product->id }}) }">
                         Excluir

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -44,7 +45,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('adm_editar_pratos', ['product' => $product, 'categories' => Category::all()]);
     }
 
     /**
@@ -52,7 +53,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->update($request->all());
+
+        return redirect('/pratos');
     }
 
     /**

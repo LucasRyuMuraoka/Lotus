@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Lotus - Editar Prato</title>
+    <link rel="stylesheet" href="{{ asset('assets/css/normalize/normalize.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/global/global.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/editar-pratos.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="icon" href="{{ asset('/assets/images/torii gate guia logo.jpg') }}">
+
+    @livewireStyles
+</head>
+
+<body>
+
+    @livewire('admin-header')
+
+    <main class="admin-main">
+
+        <section class="admin-hero">
+            <div class="hero-content">
+                <h1 class="animate__animated animate__fadeInDown">
+                    Editar <span>Prato</span>
+                </h1>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">
+                    Altere os dados do prato selecionado.
+                </p>
+            </div>
+        </section>
+
+        <section class="admin-content">
+            <div class="admin-form">
+                <h2>Editando Prato:</h2>
+                <form id="editar-prato-form" method="post" action="/products/{{ $product->id }}" enctype="multipart/form-data">
+                    @method('PUT')
+                    @csrf
+                    {{-- <input type="hidden" id="prato-id" name="id" value="{{ $product->id }}" /> --}}
+
+                    <div class="form-group">
+                        <label for="name">Nome do Prato:</label>
+                        <input type="text" id="nome-prato" name="name" required value="{{ $product->name }}" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricao">Descrição:</label>
+                        <textarea id="descricao" name="description" rows="4" required>{{ $product->description }}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoria">Categoria:</label>
+                        <select id="categoria" name="category_id" required>
+                            @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preco">Preço (R$):</label>
+                        <input type="number" id="preco" name="price" step="0.01" required value="{{ $product->price }}" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imagem">URL da Imagem:</label>
+                        <input type="url" id="imagem" name="url_image" placeholder="https://..." required value="{{ $product->url_image }}" />
+                    </div>
+
+                    <button type="submit">Salvar Alterações</button>
+                    <a href="{{ route('pratos') }}" class="btn-cancelar">Cancelar</a>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div class="pre-footer-line"></div>
+
+    @livewire('admin-footer')
+
+    @livewireScripts
+</body>
+
+</html>

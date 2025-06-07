@@ -24,7 +24,9 @@ Route::view('conta', 'conta')->middleware(['auth'])->name('conta');
 Route::middleware(['auth', AdminMiddleware::class])->group(function () {
     Route::view('/dashboard', 'adm_home')->name('dashboard');
     Route::view('/pratos', 'adm_pratos')->name('pratos');
-    Route::view('/usuarios','adm_usuarios')->name('usuarios');
+    Route::view('/usuarios', 'adm_usuarios')->name('usuarios');
+    Route::put('/products/{product}', [ProductController::class, 'update']);
+    Route::get('/products/{product}/edit', [ProductController::class, 'edit']);
 });
 
 // Route::view('dashboard', 'dashboard')->middleware(['auth', AdminMiddleware::class])->name('dashboard');
