@@ -45,7 +45,7 @@
                         <div class="slide-content">
                             <h2>Sushi Tradicional</h2>
                             <p>Experimente nossos sushis preparados com ingredientes frescos e técnicas tradicionais japonesas.</p>
-                            <a href="#" class="btn">Saiba mais</a>
+                            <a href="{{ route('cardapio') }}" class="btn">Saiba mais</a>
                         </div>
                     </div>
 
@@ -56,7 +56,7 @@
                         <div class="slide-content">
                             <h2>Variedades Premium</h2>
                             <p>Delicie-se com nossa seleção premium de combinados e pratos especiais.</p>
-                            <a href="#" class="btn">Ver cardápio</a>
+                            <a href="{{ route('cardapio') }}" class="btn">Ver cardápio</a>
                         </div>
                     </div>
 
@@ -67,7 +67,7 @@
                         <div class="slide-content">
                             <h2>Combinados Especiais</h2>
                             <p>Conheça nossos combinados especiais, perfeitos para compartilhar momentos únicos.</p>
-                            <a href="#" class="btn">Fazer pedido</a>
+                            <a href="{{ route('cardapio') }}" class="btn">Fazer pedido</a>
                         </div>
                     </div>
                 </div>
