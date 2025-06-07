@@ -14,23 +14,23 @@
 
             <livewire:add-to-cart-button :productId="$productId" class="menu-add" />
 
-            <div x-data="{ show: false, message: '' }"
-                x-show="show"
-                x-transition
-                x-init="
-                    window.addEventListener('cart-added', e => {
-                        console.log('Evento recebido: ', e.detail[0].productId);
-                        if(e.detail[0].productId ===  @js($productId)){
-                            message = e.detail[0].message;
-                            show = true;
-                            setTimeout(() => show = false, 3000);
-                        }
-                    })
-                "
-                class="cart-notification"
-                style="display: none;">
-                <span x-text="message"></span>
-            </div>
+        </div>
+        <div x-data="{ show: false, message: '' }"
+            x-show="show"
+            x-transition
+            x-init="
+                window.addEventListener('cart-added', e => {
+                    console.log('Evento recebido: ', e.detail[0].productId);
+                    if(e.detail[0].productId ===  @js($productId)){
+                        message = e.detail[0].message;
+                        show = true;
+                        setTimeout(() => show = false, 3000);
+                    }
+                })
+            "
+            class="cart-notification"
+            style="display: none;">
+            <span x-text="message"></span>
         </div>
     </div>
 </div>
