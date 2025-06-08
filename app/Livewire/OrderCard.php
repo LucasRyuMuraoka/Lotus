@@ -15,6 +15,18 @@ class OrderCard extends Component
         $this->order = $order;
     }
 
+    public function cancelOrder()
+    {
+        if ($this->order->status === 'Entregue' || $this->order->status === 'Cancelado') {
+            return;
+        }
+
+        $this->order->update(['status' => 'Cancelado']);
+        $this->order->refresh();
+
+        session()->flash('message', 'Pedido cancelado com sucesso.');
+    }
+
     public function render()
     {
         return view('livewire.order-card');

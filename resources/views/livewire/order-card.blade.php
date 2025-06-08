@@ -25,7 +25,7 @@
         <div class="order-actions">
             <span class="order-price">R$ {{ number_format($order->total, 2, ',', '.') }}</span>
             @if($order->status !== 'Entregue' && $order->status !== 'Cancelado')
-            <button class="order-cancel">Cancelar</button>
+            <button class="order-cancel" @click="if (confirm('Tem certeza que deseja excluir este prato?')) { $wire.cancelOrder() }">Cancelar</button>
             @endif
         </div>
     </div>
