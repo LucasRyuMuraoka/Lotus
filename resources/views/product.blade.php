@@ -70,14 +70,14 @@
                     </div>
 
                     <livewire:add-to-cart-button :productId="$product->id" class="add-to-cart-btn" />
-                    <div x-data="{ show: false, message: '' }" x-show="show" x-transition x-init="window.addEventListener('cart-added', e => {
+                </div>
+                <div x-data="{ show: false, message: '' }" x-show="show" x-transition x-init="window.addEventListener('cart-added', e => {
                         message = e.detail[0].message;
                         show = true;
                         setTimeout(() => show = false, 3000);
                     })"
-                        class="cart-notification" style="display: none;">
-                        <span x-text="message"></span>
-                    </div>
+                    class="cart-notification" style="display: none;">
+                    <span x-text="message"></span>
                 </div>
             </div>
         </div>
