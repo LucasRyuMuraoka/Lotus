@@ -1,4 +1,9 @@
-/* Hero Section */
+.admin-main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .admin-hero {
     background: var(--bg-dark);
     color: #fff;
@@ -27,6 +32,7 @@
     padding: 3rem 2rem;
     max-width: 1200px;
     margin: auto;
+    flex: 1;
 }
 
 .admin-content h2 {
