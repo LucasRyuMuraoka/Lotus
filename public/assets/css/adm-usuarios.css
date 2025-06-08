@@ -1,5 +1,5 @@
 .admin-main {
-    min-height: 100vh;
+  margin-bottom: 4rem;
 }
 
 .admin-hero {
@@ -134,7 +134,7 @@
   text-decoration: none;
   color: var(--text-muted);
   transition: color 0.3s ease;
-  
+
 }
 
 .admin-lista ul li .acoes button:hover {
