@@ -1,6 +1,8 @@
 <header class="header">
     <div class="h-logo">
-        <img src="{{ asset('assets/images/logo.png') }}" alt="logo" title="logo" class="logo" />
+        <a href="{{ route('home') }}">
+            <img src="{{ asset('assets/images/logo.png') }}" alt="logo" title="logo" class="logo">
+        </a>
     </div>
     <nav class="h-nav">
         <ul class="n-menu">

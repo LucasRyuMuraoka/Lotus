@@ -4,10 +4,6 @@ body {
   min-height: 100vh;
 }
 
-.header {
-  flex-shrink: 0;
-}
-
 .product-main {
   max-width: 1200px;
   margin: 0 auto;
@@ -162,14 +158,6 @@ body {
   background-color: #d12a26;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(244, 50, 46, 0.3);
-}
-
-.footer {
-  flex-shrink: 0;
-}
-
-.pre-footer-line {
-  margin-top: auto;
 }
 
 /* Responsividade */

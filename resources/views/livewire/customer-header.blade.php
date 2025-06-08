@@ -1,6 +1,8 @@
 <header class="header">
     <div class="h-logo">
-        <img src="{{ asset('assets/images/logo.png') }}" alt="logo" title="logo" class="01-logo">
+        <a href="{{ route('home') }}">
+            <img src="{{ asset('assets/images/logo.png') }}" alt="logo" title="logo" class="logo">
+        </a>
     </div>
 
     <nav class="h-nav">
@@ -16,7 +18,7 @@
             <li><a href="{{ route('conta') }}" class="{{ request()->routeIs('conta') ? 'active' : '' }}">Conta</a></li>
 
             @elseif(auth()->user()->role === 'admin')
-            <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">Dashboard</a></li>
 
             @endif
             <li>

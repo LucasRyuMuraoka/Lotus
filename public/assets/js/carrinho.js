@@ -7,26 +7,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const totalElement = document.getElementById('total');
   const taxaEntrega = document.getElementById('taxa-entrega');
   const finalizarBtn = document.getElementById('finalizar-compra');
-  const cupomInput = document.getElementById('cupom');
-  const aplicarCupomBtn = document.getElementById('aplicar-cupom');
-  const cupomMensagem = document.getElementById('cupom-mensagem');
   const cepInput = document.getElementById('cep');
   const ruaInput = document.getElementById('rua');
   const numeroInput = document.getElementById('numero');
   const bairroInput = document.getElementById('bairro');
   const cidadeInput = document.getElementById('cidade');
 
-  // Cupons válidos
-  const cupons = {
-    'LOTUS10': { desconto: 0.1, mensagem: 'Desconto de 10% aplicado!' },
-    'PROMO25': { desconto: 0.25, mensagem: 'Desconto de 25% aplicado!' },
-    'FRETE': { frete: true, mensagem: 'Frete grátis aplicado!' }
-  };
 
-  // Valor da taxa de entrega
-  const taxaEntregaValor = 12.90;
-  let descontoAplicado = 0;
-  let freteGratis = false;
 
   // Função para formatar valores em reais
   function formatarPreco(preco) {
@@ -184,36 +171,6 @@ document.addEventListener('DOMContentLoaded', function () {
     renderizarItens();
   }
 
-  // Função para aplicar cupom de desconto
-  function aplicarCupom() {
-    const codigo = cupomInput.value.trim().toUpperCase();
-
-    // Verifica se o cupom existe
-    if (!cupons[codigo]) {
-      cupomMensagem.textContent = 'Cupom inválido!';
-      cupomMensagem.className = '';
-      return;
-    }
-
-    // Aplica o cupom
-    const cupom = cupons[codigo];
-
-    if (cupom.desconto) {
-      descontoAplicado = cupom.desconto;
-    }
-
-    if (cupom.frete) {
-      freteGratis = true;
-    }
-
-    // Exibe mensagem de sucesso
-    cupomMensagem.textContent = cupom.mensagem;
-    cupomMensagem.className = 'success';
-
-    // Atualiza o resumo
-    atualizarResumo();
-  }
-
   // Função para buscar dados de endereço pelo CEP
   function buscarCep() {
     const cep = cepInput.value.replace(/\D/g, ''); // Remove caracteres não numéricos
@@ -317,7 +274,6 @@ document.addEventListener('DOMContentLoaded', function () {
     salvarCarrinho(exemploCarrinho);
   }
 
-  aplicarCupomBtn.addEventListener('click', aplicarCupom);
   cepInput.addEventListener('blur', buscarCep);
   finalizarBtn.addEventListener('click', finalizarPedido);
 

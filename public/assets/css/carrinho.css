@@ -1,5 +1,5 @@
 .carrinho-hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/carrinho-bg.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
   background-size: cover;
   background-position: center;
   color: white;
@@ -8,8 +8,9 @@
 }
 
 .carrinho-hero h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .carrinho-hero h1 span {
@@ -25,6 +26,8 @@
 
 .carrinho-main {
   min-height: calc(100vh - 200px);
+
+  margin-bottom: 100px;
 }
 
 .carrinho-content {
@@ -109,6 +112,7 @@
   gap: 15px;
   padding: 15px 0;
   border-bottom: 1px solid #eee;
+
 }
 
 .item-img {

@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin-bottom: 0;
 }
 
 .admin-hero {
@@ -32,7 +33,9 @@
     padding: 3rem 2rem;
     max-width: 1200px;
     margin: auto;
-    flex: 1;
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
 }
 
 .admin-content h2 {

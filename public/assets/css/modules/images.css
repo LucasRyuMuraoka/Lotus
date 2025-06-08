@@ -2,6 +2,8 @@
   width: 9.375rem;
   max-height: 6.25rem;
   padding: 1rem;
+
+  cursor: pointer;
 }
 
 .s01-img {
