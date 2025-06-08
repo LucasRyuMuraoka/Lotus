@@ -40,10 +40,12 @@
                     <div class="form-group">
                         <label for="nome-completo">Nome:</label>
                         <input type="text" id="nome-completo" name="name" required value="{{ $user->name }}">
+                        @error('name') <span class="error">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required value="{{ $user->email }}" disabled>
+                        @error('email') <span class="error">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
                         <label for="tipo-usuario">Tipo de Usuário:</label>
@@ -51,10 +53,12 @@
                             <option value="customer" {{ $user->role === 'customer' ? 'selected' : '' }}>Cliente</option>
                             <option value="admin" {{ $user->role === 'admin' ? 'selected' : '' }}>Administrador</option>
                         </select>
+                        @error('role') <span class="error">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
                         <label for="nova-senha">Nova Senha:</label>
                         <input type="password" id="nova-senha" name="password" minlength="5">
+                        @error('password') <span class="error">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
                         <label for="confirmar-nova-senha">Confirmar Nova Senha:</label>

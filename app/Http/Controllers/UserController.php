@@ -52,9 +52,16 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $user->update($request->all());
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|confirmed|min:5',
+            'role' => 'required|in:customer,admin',
+        ]);
 
-        return redirect('/usuarios');
+        $user->update($validated);
+
+        return redirect('/usuarios')->with('success','Usuário atualizado com sucesso');
     }
 
     /**
