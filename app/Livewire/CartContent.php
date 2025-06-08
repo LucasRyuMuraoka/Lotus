@@ -14,7 +14,7 @@ class CartContent extends Component
     protected $listeners = ['cart-updated' => 'refreshCart'];
 
     public $cart;
-    public float $taxaEntrega = 0;
+    public float $taxaEntrega = 15;
 
     public $zip_code;
     public $street;
