@@ -4,7 +4,12 @@
             <h3>Pedido #{{ $order->id }}</h3>
             <span class="order-date">{{ $order->created_at->format('d/m/Y - H:i') }}</span>
         </div>
-        <div class="order-status status-delivery">
+        <div class="order-status
+            {{ $order->status === 'Em entrega' ? 'status-delivery' : '' }}
+            {{ $order->status === 'Entregue' ? 'status-delivered' : '' }}
+            {{ $order->status === 'Em preparo' ? 'status-preparing' : '' }}
+            {{ $order->status === 'Cancelado' ? 'status-canceled' : '' }}
+            ">
             <span>{{ $order->status }}</span>
             <div class="status-dot"></div>
         </div>
@@ -19,7 +24,9 @@
 
         <div class="order-actions">
             <span class="order-price">R$ {{ number_format($order->total, 2, ',', '.') }}</span>
-            <button class="order-track">Rastrear</button>
+            @if($order->status !== 'Entregue' && $order->status !== 'Cancelado')
+            <button class="order-cancel">Cancelar</button>
+            @endif
         </div>
     </div>
 
