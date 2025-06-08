@@ -53,9 +53,21 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $product->update($request->all());
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'url_image' => 'required|string',
+            'category_id' => 'required|exists:categories,id'
+        ]);
 
-        return redirect('/pratos');
+        $product->update(array_merge($validated, [
+            'is_active' => true,
+            'discount' => 0,
+            'stock' => 100
+        ]));
+
+        return redirect('/pratos')->with('success', 'O prato foi adicionado com sucesso');
     }
 
     /**

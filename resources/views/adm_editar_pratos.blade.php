@@ -43,11 +43,13 @@
                     <div class="form-group">
                         <label for="name">Nome do Prato:</label>
                         <input type="text" id="nome-prato" name="name" required value="{{ $product->name }}" />
+                        @error('name') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="descricao">Descrição:</label>
                         <textarea id="descricao" name="description" rows="4" required>{{ $product->description }}</textarea>
+                        @error('description') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="form-group">
@@ -57,16 +59,19 @@
                             <option value="{{ $category->id }}" {{ $category->id === $product->category_id ? 'selected' : '' }}>{{ $category->name }}</option>
                             @endforeach
                         </select>
+                        @error('category_id') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="preco">Preço (R$):</label>
                         <input type="number" id="preco" name="price" step="0.01" required value="{{ $product->price }}" />
+                        @error('price') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="imagem">URL da Imagem:</label>
                         <input type="url" id="imagem" name="url_image" placeholder="https://..." required value="{{ $product->url_image }}" />
+                        @error('url_image') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
                     <button type="submit">Salvar Alterações</button>
