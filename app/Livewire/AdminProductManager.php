@@ -14,7 +14,7 @@ class AdminProductManager extends Component
     public float $price = 0;
     public int $stock = 100;
     public string $url_image = '';
-    public int $category_id = 0;
+    public $category_id = null;
 
     public $categories;
 
@@ -25,16 +25,19 @@ class AdminProductManager extends Component
 
     public function save()
     {
-        Product::create([
-            'name' => $this->name,
-            'description' => $this->description,
-            'price' => $this->price,
-            'stock' => $this->stock,
-            'url_image' => $this->url_image,
-            'category_id' => $this->category_id,
-            'is_active' => true,
-            'discount' => 0
+        $validated = $this->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'url_image' => 'required|string',
+            'category_id' => 'required|exists:categories,id'
         ]);
+
+        Product::create(array_merge($validated, [
+            'is_active' => true,
+            'discount' => 0,
+            'stock'=> $this->stock
+        ]));
 
         $this->reset(['name', 'description', 'price', 'stock', 'url_image', 'category_id']);
         session()->flash('message', 'Produto adicionado com sucesso!');

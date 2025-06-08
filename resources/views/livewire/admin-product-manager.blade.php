@@ -6,26 +6,32 @@
             <div class="form-group">
                 <label for="nome">Nome do Prato:</label>
                 <input wire:model.defer="name" type="text" id="nome" name="nome" required>
+                @error('name') <span class="error">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
                 <label for="descricao">Descrição:</label>
                 <textarea wire:model.defer="description" id="descricao" name="descricao" required></textarea>
+                @error('description') <span class="error">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
                 <label for="categoria">Categoria:</label>
                 <select wire:model.defer="category_id" id="categoria" name="categoria" required>
+                    <option value="">Selecione uma categoria</option>
                     @foreach($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
+                @error('category_id') <span class="error">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
                 <label for="preco">Preço:</label>
                 <input wire:model.defer="price" type="number" id="preco" name="preco" step="0.01" required>
+                @error('price') <span class="error">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
                 <label for="imagem">URL da Imagem:</label>
                 <input wire:model.defer="url_image" type="url" id="imagem" name="imagem">
+                @error('url_image') <span class="error">{{ $message }}</span> @enderror
             </div>
             <button type="submit">Adicionar Prato</button>
         </form>
