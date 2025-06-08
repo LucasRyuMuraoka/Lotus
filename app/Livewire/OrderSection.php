@@ -11,8 +11,6 @@ class OrderSection extends Component
 
     public string $status = 'todos';
 
-    public function updatedStatus() {}
-
     public function render()
     {
         $statuses = Order::where('user_id',Auth::id())->select('status')->distinct()->pluck('status');

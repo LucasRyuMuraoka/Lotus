@@ -4,17 +4,11 @@
         <h2>Histórico de Pedidos</h2>
         <div class="orders-filter">
             <label for="filter-status">Filtrar por status:</label>
-            <select id="filter-status" wire:model="status">
+            <select id="filter-status" wire:model.change="status">
                 <option value="todos">Todos</option>
                 @foreach($statuses as $status)
                 <option value="{{ $status }}">{{ $status }}</option>
                 @endforeach
-                {{--
-                <option value="Em preparo">Em preparo</option>
-                <option value="Em entrega">Em entrega</option>
-                <option value="Entregue">Entregue</option>
-                <option value="Cancelado">Cancelado</option>
-                    --}}
             </select>
         </div>
     </div>
