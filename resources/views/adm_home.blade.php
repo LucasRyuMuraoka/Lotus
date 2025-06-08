@@ -35,16 +35,16 @@
 
     <section class="admin-content admin-home-content">
       <div class="quick-access-cards">
-        <a href="adm-pratos.html" class="card-link">
+          <a href="{{ route('pratos') }}" class="card-link">
           <div class="access-card">
-            <img src="assets/images/menu-icon.png" alt="Ícone Pratos" class="card-icon">
+            <img src="{{ asset('assets/images/menu-icon.png') }}" alt="Ícone Pratos" class="card-icon">
             <h3>Gerenciar Pratos</h3>
             <p>Adicionar, editar ou remover pratos do cardápio.</p>
           </div>
         </a>
-        <a href="adm_usuarios.html" class="card-link">
+        <a href="{{ route('usuarios') }}" class="card-link">
           <div class="access-card">
-            <img src="assets/images/user-mana-icon.png" alt="Ícone Usuários" class="card-icon">
+            <img src="{{ asset('assets/images/user-mana-icon.png') }}" alt="Ícone Usuários" class="card-icon">
             <h3>Gerenciar Usuários</h3>
             <p>Adicionar, editar ou remover usuários do sistema.</p>
           </div>
