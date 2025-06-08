@@ -7,17 +7,17 @@
 
 .hero-content h1 {
     font-size: 2.5rem;
-    color: #ffffff;
+    color: var(--text-light);
+    margin-bottom: 1rem;
 }
 
 .hero-content h1 span {
-    color: #f4322e;
+    color: var(--primary-color);
 }
 
 .hero-content p {
     font-size: 1.1rem;
-    color: #ffffff;
-    margin-top: 0.5rem;
+    color: var(--text-muted);
 }
 
 .admin-content {

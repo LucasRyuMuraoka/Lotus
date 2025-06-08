@@ -1,0 +1,79 @@
+/* Hero Section */
+.admin-hero {
+    background: var(--bg-dark);
+    color: #fff;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.admin-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-light)
+}
+
+.admin-hero h1 span {
+    color: var(--primary-color);
+}
+
+.admin-hero p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+/* Conteúdo principal */
+.admin-content {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.admin-content h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+/* Cartões de acesso rápido */
+.quick-access-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.access-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.access-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.access-card h3 {
+    margin-bottom: 0.5rem;
+    color: #111;
+}
+
+.access-card p {
+    font-size: 0.95rem;
+    color: #000000;
+}

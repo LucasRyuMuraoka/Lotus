@@ -13,9 +13,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/produto.css') }}" />
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="icon" href="{{ asset('/assets/images/torii gate guia logo.jpg') }}">
 
     <style>
         .cart-notification {
@@ -41,18 +40,10 @@
     <main class="product-main">
         <div class="back-link">
             <a href="{{ route('cardapio') }}">
-                <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M19 12H5M5 12L12 19M5 12L12 5"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
+                    <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 Voltar para o Cardápio
             </a>
@@ -60,10 +51,7 @@
 
         <div class="product-container">
             <div class="product-image animate__animated animate__fadeIn">
-                <img
-                    id="productImage"
-                    src="{{ $product->url_image }}"
-                    alt="{{ $product->name }}" />
+                <img id="productImage" src="{{ $product->url_image }}" alt="{{ $product->name }}" />
                 <div id="productBadge" class="product-badge" style="display: none">
                     Mais Pedido
                 </div>
@@ -82,18 +70,12 @@
                     </div>
 
                     <livewire:add-to-cart-button :productId="$product->id" class="add-to-cart-btn" />
-                    <div x-data="{ show: false, message: '' }"
-                        x-show="show"
-                        x-transition
-                        x-init="
-                             window.addEventListener('cart-added', e => {
-                                 message = e.detail[0].message;
-                                 show = true;
-                                 setTimeout(() => show = false, 3000);
-                             })
-                         "
-                        class="cart-notification"
-                        style="display: none;">
+                    <div x-data="{ show: false, message: '' }" x-show="show" x-transition x-init="window.addEventListener('cart-added', e => {
+                        message = e.detail[0].message;
+                        show = true;
+                        setTimeout(() => show = false, 3000);
+                    })"
+                        class="cart-notification" style="display: none;">
                         <span x-text="message"></span>
                     </div>
                 </div>

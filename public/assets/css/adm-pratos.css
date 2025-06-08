@@ -6,9 +6,9 @@
 }
 
 .hero-content h1 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
     color: var(--text-light);
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 .hero-content h1 span {
@@ -16,7 +16,7 @@
 }
 
 .hero-content p {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     color: var(--text-muted);
 }
 
@@ -32,8 +32,8 @@
     padding: 20px;
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
 }
 
 .admin-form h2,
@@ -65,7 +65,7 @@
     padding: 8px;
     border: 1px solid var(--card-border);
     border-radius: 4px;
-    font-size: 1em;
+    font-size: 1rem;
     background-color: var(--bg-dark);
     color: var(--text-light);
 }
@@ -91,7 +91,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1rem;
     transition: background-color 0.3s ease;
 }
 
@@ -153,48 +153,7 @@
     color: #d0312a;
 }
 
-.pre-footer-line {
-    height: 5px;
-    background-color: var(--primary-color);
-    margin-top: 40px;
-}
-
-.footer {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9em;
-}
-
-.f-logo p {
-    margin: 0;
-    color: var(--text-muted);
-}
-
-.f-social a {
-    color: var(--text-light);
-    margin-left: 15px;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-    display: inline-block;
-}
-
-.f-social a:hover {
-    opacity: 1;
-}
-
-.f-social a svg {
-    display: block;
-}
-
 @media (max-width: 768px) {
-    .h-nav {
-        display: none;
-    }
-
     .admin-content {
         flex-direction: column;
     }
@@ -203,15 +162,5 @@
     .admin-lista {
         width: 100%;
         margin-bottom: 20px;
-    }
-
-    .footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-
-    .f-social {
-        margin-top: 10px;
     }
 }
