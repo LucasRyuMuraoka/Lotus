@@ -6,14 +6,17 @@
             <div class="form-group">
                 <label for="nome-completo">Nome Completo:</label>
                 <input wire:model.defer="name" type="text" id="nome-completo" name="nome-completo" required>
+                @error('name') <span class="error">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input wire:model.defer="email" type="email" id="email" name="email" required>
+                @error('email') <span class="error">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
                 <label for="senha">Senha:</label>
                 <input wire:model.defer="password" type="password" id="senha" name="senha" required>
+                @error('password') <span class="error">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
                 <label for="confirmar-senha">Confirmar Senha:</label>
@@ -25,6 +28,7 @@
                     <option value="customer">Customer</option>
                     <option value="admin">Administrador</option>
                 </select>
+                @error('role') <span class="error">{{ $message }}</span> @enderror
             </div>
             <button type="submit">Adicionar Usuário</button>
         </form>
