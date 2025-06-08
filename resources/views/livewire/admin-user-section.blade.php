@@ -4,7 +4,7 @@
         <h2>Adicionar Novo Usuário</h2>
         <form wire:submit.prevent="save" id="usuario-form">
             <div class="form-group">
-                <label for="nome-completo">Nome Completo:</label>
+                <label for="nome-completo">Nome:</label>
                 <input wire:model.defer="name" type="text" id="nome-completo" name="nome-completo" required>
                 @error('name') <span class="error">{{ $message }}</span> @enderror
             </div>
