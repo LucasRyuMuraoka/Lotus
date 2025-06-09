@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 
@@ -60,8 +61,14 @@ class AccountSection extends Component
                 'cpf' => 'nullable|string|max:11',
                 'phone' => 'nullable|string',
                 'birthDate' => 'nullable|date',
-                'password' => 'required|confirmed|min:5'
+                'password' => 'nullable|confirmed|min:5'
             ]);
+
+            if(!empty($validated['password'])){
+                $validated['password'] = Hash::make($validated['password']);
+            }else{
+                unset($validated['password']);
+            }
 
             $user->update($validated);
 
