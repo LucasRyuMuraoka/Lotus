@@ -82,12 +82,12 @@
     );
 }
 
-.logo-section {
+.signup-logo-section {
     text-align: center;
     margin-bottom: 2.5rem;
 }
 
-.logo {
+.signup-logo {
     font-size: 2.8rem;
     font-weight: 700;
     color: var(--primary-color);
@@ -95,13 +95,18 @@
     letter-spacing: -0.02em;
 }
 
-.tagline {
+.signup-logo a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.signup-tagline {
     color: var(--text-muted);
     font-size: 1rem;
     font-weight: 400;
 }
 
-.form-title {
+.signup-form-title {
     color: var(--text-light);
     font-size: 1.8rem;
     font-weight: 600;
@@ -109,12 +114,12 @@
     margin-bottom: 2rem;
 }
 
-.form-group {
+.signup-form-group {
     margin-bottom: 1.5rem;
     position: relative;
 }
 
-.form-label {
+.signup-form-label {
     display: block;
     color: var(--text-light);
     font-weight: 500;
@@ -122,7 +127,7 @@
     font-size: 0.9rem;
 }
 
-.form-input {
+.signup-form-input {
     width: 100%;
     padding: 1rem 1.25rem;
     background: rgba(255, 255, 255, 0.08);
@@ -134,7 +139,7 @@
     font-family: var(--font-family);
 }
 
-.form-input:focus {
+.signup-form-input:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(244, 50, 46, 0.2);
@@ -142,47 +147,47 @@
     transform: translateY(-2px);
 }
 
-.form-input::placeholder {
+.signup-form-input::placeholder {
     color: var(--text-muted);
 }
 
-.form-row {
+.signup-form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
 
-.checkbox-group {
+.signup-checkbox-group {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
     margin: 1.5rem 0;
 }
 
-.checkbox {
+.signup-checkbox {
     width: 18px;
     height: 18px;
     accent-color: var(--primary-color);
     margin-top: 2px;
 }
 
-.checkbox-label {
+.signup-checkbox-label {
     color: var(--text-muted);
     font-size: 0.9rem;
     line-height: 1.5;
 }
 
-.checkbox-label a {
+.signup-checkbox-label a {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
 }
 
-.checkbox-label a:hover {
+.signup-checkbox-label a:hover {
     text-decoration: underline;
 }
 
-.submit-btn {
+.signup-submit-btn {
     width: 100%;
     padding: 1rem;
     background: linear-gradient(135deg, var(--primary-color) 0%, #e53e3a 100%);
@@ -198,7 +203,7 @@
     overflow: hidden;
 }
 
-.submit-btn::before {
+.signup-submit-btn::before {
     content: "";
     position: absolute;
     top: 0;
@@ -214,33 +219,33 @@
     transition: left 0.5s;
 }
 
-.submit-btn:hover {
+.signup-submit-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(244, 50, 46, 0.4);
 }
 
-.submit-btn:hover::before {
+.signup-submit-btn:hover::before {
     left: 100%;
 }
 
-.login-link {
+.signup-login-link {
     text-align: center;
     margin-top: 2rem;
     color: var(--text-muted);
     font-size: 0.9rem;
 }
 
-.login-link a {
+.signup-login-link a {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
 }
 
-.login-link a:hover {
+.signup-login-link a:hover {
     text-decoration: underline;
 }
 
-.floating-element {
+.signup-floating-element {
     position: absolute;
     width: 60px;
     height: 60px;
@@ -251,7 +256,7 @@
     animation: floatElement 8s infinite ease-in-out;
 }
 
-.floating-element:nth-child(2) {
+.signup-floating-element:nth-child(2) {
     width: 40px;
     height: 40px;
     top: 70%;
@@ -259,7 +264,7 @@
     animation-delay: -4s;
 }
 
-.notification-popup {
+.signup-notification-popup {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -277,34 +282,34 @@
     font-weight: 500;
 }
 
-.notification-popup.show {
+.signup-notification-popup.show {
     transform: translateX(0);
 }
 
-.notification-popup.success {
+.signup-notification-popup.success {
     background-color: #d4edda;
     color: #155724;
     border-left: 4px solid #28a745;
 }
 
-.notification-popup.error {
+.signup-notification-popup.error {
     background-color: #f8d7da;
     color: #721c24;
     border-left: 4px solid #dc3545;
 }
 
-.notification-popup .icon {
+.signup-notification-popup .signup-icon {
     font-size: 18px;
     font-weight: bold;
 }
 
-.notification-popup .message {
+.signup-notification-popup .signup-message {
     flex-grow: 1;
     font-size: 14px;
     line-height: 1.4;
 }
 
-.notification-popup .close-btn {
+.signup-notification-popup .signup-close-btn {
     background: none;
     border: none;
     font-size: 16px;
@@ -314,7 +319,7 @@
     transition: opacity 0.2s;
 }
 
-.notification-popup .close-btn:hover {
+.signup-notification-popup .signup-close-btn:hover {
     opacity: 1;
 }
 
@@ -338,15 +343,15 @@
         padding: 2rem;
     }
 
-    .logo {
+    .signup-logo {
         font-size: 2.4rem;
     }
 
-    .form-title {
+    .signup-form-title {
         font-size: 1.5rem;
     }
 
-    .form-row {
+    .signup-form-row {
         grid-template-columns: 1fr;
     }
 }

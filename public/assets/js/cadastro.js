@@ -1,20 +1,20 @@
 function showNotification(message, type = "success", duration = 4000) {
-    const existingPopup = document.querySelector(".notification-popup");
+    const existingPopup = document.querySelector(".signup-notification-popup");
     if (existingPopup) {
         existingPopup.remove();
     }
 
     const popup = document.createElement("div");
-    popup.className = `notification-popup ${type}`;
+    popup.className = `signup-notification-popup ${type}`;
 
     const icon = type === "success" ? "✓" : "⚠";
 
     const displayMessage = message || "Operação realizada com sucesso!";
 
     popup.innerHTML = `
-        <span class="icon">${icon}</span>
-        <span class="message">${displayMessage}</span>
-        <button class="close-btn" onclick="closeNotification(this.parentElement)">&times;</button>
+        <span class="signup-icon">${icon}</span>
+        <span class="signup-message">${displayMessage}</span>
+        <button class="signup-close-btn" onclick="closeNotification(this.parentElement)">&times;</button>
     `;
 
     document.body.appendChild(popup);
@@ -29,7 +29,7 @@ function showNotification(message, type = "success", duration = 4000) {
 }
 
 function closeNotification(popup) {
-    if (popup && popup.classList.contains("notification-popup")) {
+    if (popup && popup.classList.contains("signup-notification-popup")) {
         popup.classList.remove("show");
         setTimeout(() => {
             if (popup.parentNode) {
@@ -52,7 +52,7 @@ document.addEventListener("livewire:initialized", () => {
     });
 });
 
-document.querySelectorAll(".form-input").forEach((input) => {
+document.querySelectorAll(".signup-form-input").forEach((input) => {
     input.addEventListener("focus", function () {
         this.parentElement.style.transform = "scale(1.02)";
     });

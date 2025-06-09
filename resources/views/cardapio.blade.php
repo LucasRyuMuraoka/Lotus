@@ -21,9 +21,9 @@
 <body>
     @livewire('customer-header')
 
-    <main class="c-main">
-        <section class="c-section-hero">
-            <div class="hero-content">
+    <main class="menu-c-main">
+        <section class="menu-c-section-hero">
+            <div class="menu-hero-content">
                 <h1 class="animate__animated animate__fadeInDown">Nosso <span>Cardápio</span></h1>
                 <p class="animate__animated animate__fadeIn animate__delay-1s">Descubra a autêntica experiência da
                     culinária
@@ -33,12 +33,12 @@
 
         <livewire:menu-section />
 
-        <section class="c-section-promo">
-            <div class="promo-content">
+        <section class="menu-c-section-promo">
+            <div class="menu-promo-content">
                 <h2>Promoção da Semana</h2>
                 <h3>Combinado Especial para Casal</h3>
                 <p>16 peças de sushi + 2 temakis + 2 bebidas por apenas <span>R$ 99,90</span></p>
-                <a href="#" class="promo-btn">Aproveitar</a>
+                <a href="#" class="menu-promo-btn">Aproveitar</a>
             </div>
         </section>
     </main>

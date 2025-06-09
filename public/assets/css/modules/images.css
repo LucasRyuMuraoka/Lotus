@@ -6,7 +6,7 @@
   cursor: pointer;
 }
 
-.s01-img {
+.home-s01-img {
   width: 52rem;
   height: 40rem;
   position: absolute;
@@ -39,7 +39,7 @@
 
 
 @media (max-width: 600px){
-  .s01-img{
+  .home-s01-img{
     display: none;
   }
 }

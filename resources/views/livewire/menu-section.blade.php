@@ -1,14 +1,14 @@
-<section class="c-section-menu">
+<section class="menu-c-section-menu">
 
     <!-- Barra de Pesquisa -->
-    <div class="search-container">
+    <div class="menu-search-container">
         <input
             type="text"
             wire:model.live="search"
             id="searchInput"
-            class="search-input"
+            class="menu-search-input"
             placeholder="Buscar pratos..." />
-        <button class="search-btn" type="submit">
+        <button class="menu-search-btn" type="submit">
             <svg
                 width="20"
                 height="20"
@@ -26,11 +26,11 @@
     </div>
 
     <div class="menu-filter">
-        <button class="filter-btn {{ $filter === 'todos' ? 'active' : '' }}" wire:click="setFilter('todos')" {{-- data-filter="todos" --}}>Todos</button>
-        <button class="filter-btn {{ $filter === 'recomendados' ? 'active' : '' }}" wire:click="setFilter('recomendados')" {{-- data-filter="sushi" --}}>Recomendados</button>
-        <button class="filter-btn {{ $filter === 'sashimi' ? 'active' : '' }}" wire:click="setFilter('sashimi')" {{-- data-filter="sashimi" --}}>Sashimi</button>
-        <button class="filter-btn {{ $filter === 'combinados' ? 'active' : '' }}" wire:click="setFilter('combinados')" {{-- data-filter="combinados" --}}>Combinados</button>
-        <button class="filter-btn {{ $filter === 'bebidas' ? 'active' : '' }}" wire:click="setFilter('bebidas')" {{-- data-filter="bebidas" --}}>Bebidas</button>
+        <button class="menu-filter-btn {{ $filter === 'todos' ? 'active' : '' }}" wire:click="setFilter('todos')" {{-- data-filter="todos" --}}>Todos</button>
+        <button class="menu-filter-btn {{ $filter === 'recomendados' ? 'active' : '' }}" wire:click="setFilter('recomendados')" {{-- data-filter="sushi" --}}>Recomendados</button>
+        <button class="menu-filter-btn {{ $filter === 'sashimi' ? 'active' : '' }}" wire:click="setFilter('sashimi')" {{-- data-filter="sashimi" --}}>Sashimi</button>
+        <button class="menu-filter-btn {{ $filter === 'combinados' ? 'active' : '' }}" wire:click="setFilter('combinados')" {{-- data-filter="combinados" --}}>Combinados</button>
+        <button class="menu-filter-btn {{ $filter === 'bebidas' ? 'active' : '' }}" wire:click="setFilter('bebidas')" {{-- data-filter="bebidas" --}}>Bebidas</button>
     </div>
 
     <div class="menu-grid">

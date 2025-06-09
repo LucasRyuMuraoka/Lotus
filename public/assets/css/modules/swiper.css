@@ -57,7 +57,7 @@
   line-height: 1.5;
 }
 
-.slide-content .btn {
+.slide-content .home-btn {
   display: inline-block;
   padding: 12px 28px;
   background-color: var(--primary-color);
@@ -68,7 +68,7 @@
   transition: all 0.3s ease;
 }
 
-.slide-content .btn:hover {
+.slide-content .home-btn:hover {
   background-color: #d12a26;
   transform: translateY(-3px);
 }

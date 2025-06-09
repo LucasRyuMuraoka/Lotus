@@ -23,7 +23,7 @@
     <main class="carrinho-main">
 
         <section class="carrinho-hero">
-            <div class="hero-content">
+            <div class="carrinho-hero-content">
                 <h1 class="animate__animated animate__fadeInDown">
                     Seu <span>Carrinho</span>
                 </h1>

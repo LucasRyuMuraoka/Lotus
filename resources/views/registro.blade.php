@@ -19,20 +19,20 @@
 <body>
     <div class="register-page-wrapper">
 
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
+        <div class="signup-floating-element"></div>
+        <div class="signup-floating-element"></div>
 
         <div class="signup-container animate__animated animate__fadeInUp">
-            <div class="logo-section animate__animated animate__fadeInDown animate__delay-1s">
-                <div class="logo">LOTUS</div>
-                <div class="tagline">Experiência gastronômica Oriental única</div>
+            <div class="signup-logo-section animate__animated animate__fadeInDown animate__delay-1s">
+                <div class="signup-logo"><a href="{{ route('home') }}">LOTUS</a></div>
+                <div class="signup-tagline">Experiência gastronômica Oriental única</div>
             </div>
 
-            <h2 class="form-title animate__animated animate__fadeIn animate__delay-2s">Criar Conta</h2>
+            <h2 class="signup-form-title animate__animated animate__fadeIn animate__delay-2s">Criar Conta</h2>
 
             <livewire:register-form />
 
-            <div class="login-link animate__animated animate__fadeIn animate__delay-6s">
+            <div class="signup-login-link animate__animated animate__fadeIn animate__delay-6s">
                 Já tem uma conta? <a href="{{ route('entrar') }}">Fazer login</a>
             </div>
         </div>

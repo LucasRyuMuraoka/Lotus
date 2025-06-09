@@ -1,4 +1,4 @@
-.s02-button {
+.home-s02-button {
   display: inline-block;
   padding: 1rem 2rem;
   background-color: var(--primary-color);
@@ -10,7 +10,7 @@
   font-size: 1.1rem;
 }
 
-.s02-button:hover {
+.home-s02-button:hover {
   background-color: #d12a26;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(244, 50, 46, 0.3);

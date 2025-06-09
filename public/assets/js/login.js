@@ -2,7 +2,7 @@ let passwordVisible = false;
 
 function togglePassword() {
   const passwordInput = document.getElementById("password");
-  const toggleIcon = document.querySelector(".password-toggle");
+  const toggleIcon = document.querySelector(".login-password-toggle");
 
   if (passwordVisible) {
     passwordInput.type = "password";
@@ -16,22 +16,22 @@ function togglePassword() {
 }
 
 function showNotification(message, type = 'success', duration = 4000) {
-    const existingPopup = document.querySelector('.notification-popup');
+    const existingPopup = document.querySelector('.login-notification-popup');
     if (existingPopup) {
         existingPopup.remove();
     }
 
     const popup = document.createElement('div');
-    popup.className = `notification-popup ${type}`;
+    popup.className = `login-notification-popup ${type}`;
     
     const icon = type === 'success' ? '✓' : '⚠';
     
     const displayMessage = message || 'Operação realizada com sucesso!';
     
     popup.innerHTML = `
-        <span class="icon">${icon}</span>
-        <span class="message">${displayMessage}</span>
-        <button class="close-btn" onclick="closeNotification(this.parentElement)">&times;</button>
+        <span class="login-icon">${icon}</span>
+        <span class="login-message">${displayMessage}</span>
+        <button class="login-close-btn" onclick="closeNotification(this.parentElement)">&times;</button>
     `;
 
     document.body.appendChild(popup);
@@ -46,7 +46,7 @@ function showNotification(message, type = 'success', duration = 4000) {
 }
 
 function closeNotification(popup) {
-    if (popup && popup.classList.contains('notification-popup')) {
+    if (popup && popup.classList.contains('login-notification-popup')) {
         popup.classList.remove('show');
         setTimeout(() => {
             if (popup.parentNode) {

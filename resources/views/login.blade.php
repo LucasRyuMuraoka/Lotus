@@ -16,28 +16,28 @@
 <body>
     <div class="login-page-wrapper">
 
-        <div class="floating-particle"></div>
-        <div class="floating-particle"></div>
-        <div class="floating-particle"></div>
+        <div class="login-floating-particle"></div>
+        <div class="login-floating-particle"></div>
+        <div class="login-floating-particle"></div>
 
         <div class="login-container animate__animated animate__fadeInUp">
-            <div class="logo-section animate__animated animate__fadeInDown animate__delay-1s">
-                <div class="logo">LOTUS</div>
-                <div class="tagline">Experiência gastronômica Oriental única</div>
+            <div class="login-logo-section animate__animated animate__fadeInDown animate__delay-1s">
+                <div class="login-logo"><a href="{{ route('home') }}">LOTUS</a></div>
+                <div class="login-tagline">Experiência gastronômica Oriental única</div>
             </div>
 
-            <div class="welcome-text animate__animated animate__fadeIn animate__delay-2s">
+            <div class="login-welcome-text animate__animated animate__fadeIn animate__delay-2s">
                 Bem-vindo de volta
             </div>
-            <div class="subtitle animate__animated animate__fadeIn animate__delay-2s">
+            <div class="login-subtitle animate__animated animate__fadeIn animate__delay-2s">
                 Faça login para continuar sua jornada gastronômica
             </div>
 
-            <div class="error-message" id="errorMessage"></div>
+            <div class="login-error-message" id="errorMessage"></div>
 
             <livewire:login-form />
 
-            <div class="signup-link animate__animated animate__fadeIn animate__delay-6s">
+            <div class="login-signup-link animate__animated animate__fadeIn animate__delay-6s">
                 Não tem uma conta? <a href="{{ route('registro') }}">Criar conta</a>
             </div>
         </div>

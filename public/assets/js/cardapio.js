@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
+  const filterButtons = document.querySelectorAll('.menu-filter-btn');
   const menuItems = document.querySelectorAll('.menu-item');
 
   filterButtons.forEach(button => {

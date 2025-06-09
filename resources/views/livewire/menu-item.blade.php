@@ -28,7 +28,7 @@
                     }
                 })
             "
-            class="cart-notification"
+            class="menu-cart-notification"
             style="display: none;">
             <span x-text="message"></span>
         </div>
