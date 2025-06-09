@@ -43,15 +43,8 @@
                 <div class="product-price" id="productPrice">R$ {{ number_format($product->price, 2, ',', '.') }}</div>
                 <div class="product-description" id="productDescription">{{ $product->description }}</div>
 
-                <div class="product-actions">
-                    <div class="quantity-selector">
-                        <button id="decreaseQuantity" class="quantity-btn">−</button>
-                        <span id="quantityValue">1</span>
-                        <button id="increaseQuantity" class="quantity-btn">+</button>
-                    </div>
+                <livewire:add-to-cart-with-quantity :productId="$product->id" />
 
-                    <livewire:add-to-cart-button :productId="$product->id" class="add-to-cart-btn" />
-                </div>
                 <div x-data="{ show: false, message: '' }" x-show="show" x-transition x-init="window.addEventListener('cart-added', e => {
                         message = e.detail[0].message;
                         show = true;
