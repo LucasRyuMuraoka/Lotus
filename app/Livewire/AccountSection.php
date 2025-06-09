@@ -17,6 +17,8 @@ class AccountSection extends Component
     public string $cpf;
     public string $phone;
     public string $birthDate;
+    public string $password;
+    public string $password_confirmation;
 
     public string $originalName;
     public string $originalEmail;
@@ -52,21 +54,16 @@ class AccountSection extends Component
         try {
             $user = Auth::user();
 
-            $this->validate([
+            $validated = $this->validate([
                 'name' => 'required|string|max:255',
                 //'email' => 'required|email|unique:users,email,' . $user->id,
                 'cpf' => 'nullable|string|max:11',
                 'phone' => 'nullable|string',
                 'birthDate' => 'nullable|date',
+                'password' => 'required|confirmed|min:5'
             ]);
 
-            $user->update([
-                'name' => $this->name,
-                //'email' => $this->email,
-                'cpf' => $this->cpf,
-                'phone' => $this->phone,
-                'birthDate' => $this->birthDate,
-            ]);
+            $user->update($validated);
 
             $this->originalName = $this->name;
             //$this->originalEmail = $this->email;
@@ -90,6 +87,8 @@ class AccountSection extends Component
         $this->cpf = $this->originalCpf;
         $this->phone = $this->originalPhone;
         $this->birthDate = $this->originalBirthDate;
+        $this->password = '';
+        $this->password_confirmation = '';
     }
 
     public function deleteAccount()

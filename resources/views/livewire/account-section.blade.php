@@ -50,11 +50,13 @@
                                     <label for="data-nasc">Data de nascimento*</label>
                                     <input wire:model.defer="birthDate" type="date" id="data-nasc" name="data-nasc"
                                         value="{{ $birthDate }}" />
+                                    @error('birthDate') <span class="error">{{ $message ?? '' }}</span> @enderror
                                 </div>
                                 <div class="profile-form-group">
                                     <label for="telefone">Telefone*</label>
                                     <input wire:model.defer="phone" type="tel" pattern="^\(\d{2}\)\s\d{4,5}-\d{4}$" placeholder="(11) 12345-6789" id="telefone" name="telefone"
                                         value="{{ $phone }}" />
+                                    @error('phone') <span class="error">{{ $message ?? '' }}</span> @enderror
                                 </div>
                             </div>
                         </div>
@@ -72,14 +74,15 @@
                             <div class="profile-form-row">
                                 <div class="profile-form-group">
                                     <label for="nova-senha">Nova senha</label>
-                                    <input type="password" id="nova-senha" name="nova-senha" placeholder="••••••••" />
+                                    <input wire:model.defer="password" type="password" id="nova-senha" name="nova-senha" placeholder="••••••••" />
+                                    @error('password') <span class="error">{{ $message ?? '' }}</span> @enderror
                                 </div>
                             </div>
 
                             <div class="profile-form-row">
                                 <div class="profile-form-group full-width">
                                     <label for="confirmar-senha">Confirmar nova senha</label>
-                                    <input type="password" id="confirmar-senha" name="confirmar-senha"
+                                    <input wire:model.defer="password_confirmation" type="password" id="confirmar-senha" name="confirmar-senha"
                                         placeholder="••••••••" />
                                 </div>
                             </div>
