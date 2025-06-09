@@ -72,51 +72,60 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function showPrivacyConfirm() {
-
+    // Verifica se o usuário já fez uma escolha sobre a política de privacidade
     if (localStorage.getItem('privacyChoice') !== 'accepted') {
 
-        // Primeiro pergunta se quer saber mais
-        const wantInfo = confirm("Este site utiliza cookies para melhorar sua experiência.\n\n" +
-            "Deseja saber mais sobre nossa Política de Privacidade antes de decidir?");
+        // Pergunta única com opções
+        const userResponse = confirm(
+            "Este site utiliza cookies para melhorar sua experiência.\n\n" +
+            "Clique em 'OK' para aceitar os cookies.\n" +
+            "Clique em 'Cancelar' para acessar nossa Política de Privacidade antes de decidir."
+        );
 
-        if (wantInfo) {
-            // Tenta abrir a política de privacidade
-            try {
-                window.open('./politica_privacidade', '_blank');
-            } catch (error) {
-                // Se não conseguir abrir em nova aba, redireciona na mesma
-                window.location.href = './politica_privacidade';
-                return; // Para não executar o resto do código
-            }
-
-            // Aguarda um pouco e pergunta novamente
-            setTimeout(() => {
-                const acceptCookies = confirm("Após conhecer nossa Política de Privacidade,\n" +
-                    "você aceita o uso de cookies?");
-
-                if (acceptCookies) {
-                    localStorage.setItem('privacyChoice', 'accepted');
-                    console.log('Cookies aceitos');
-                } else {
-                    localStorage.setItem('privacyChoice', 'declined');
-                    console.log('Cookies recusados');
-                }
-            }, 2000); // Aumentei para 2 segundos
+        if (userResponse) {
+            // Usuário aceitou diretamente
+            localStorage.setItem('privacyChoice', 'accepted');
+            console.log('Cookies aceitos diretamente');
         } else {
-            // Pergunta diretamente sobre aceitar
-            const acceptCookies = confirm("Você aceita o uso de cookies?");
+            // Usuário quer ver a política primeiro
+            try {
+                // Tenta abrir a política de privacidade em nova aba
+                const newWindow = window.open('./politica_privacidade', '_blank');
 
-            if (acceptCookies) {
-                localStorage.setItem('privacyChoice', 'accepted');
-                console.log('Cookies aceitos');
-            } else {
-                localStorage.setItem('privacyChoice', 'declined');
-                console.log('Cookies recusados');
+                // Verifica se conseguiu abrir a nova aba
+                if (newWindow) {
+                    // Aguarda um pouco para dar tempo do usuário ler
+                    setTimeout(() => {
+                        const finalDecision = confirm(
+                            "Após conhecer nossa Política de Privacidade, você aceita o uso de cookies?\n\n" +
+                            "Clique em 'OK' para aceitar ou 'Cancelar' para recusar."
+                        );
+
+                        if (finalDecision) {
+                            localStorage.setItem('privacyChoice', 'accepted');
+                            console.log('Cookies aceitos após consulta à política');
+                        } else {
+                            localStorage.setItem('privacyChoice', 'declined');
+                            console.log('Cookies recusados após consulta à política');
+                        }
+                    }, 3000);
+                } else {
+                    // Se não conseguiu abrir nova aba, redireciona na mesma página
+                    alert("Redirecionando para nossa Política de Privacidade...");
+                    window.location.href = './politica_privacidade';
+                }
+            } catch (error) {
+                // Em case de erro, redireciona diretamente
+                console.error('Erro ao abrir política de privacidade:', error);
+                alert("Redirecionando para nossa Política de Privacidade...");
+                window.location.href = './politica_privacidade';
             }
         }
     }
-
 }
 
-// Chamar a função
-showPrivacyConfirm();
+// Chamar a função após carregar a página
+document.addEventListener('DOMContentLoaded', function () {
+    // Aguarda um pouco antes de mostrar o aviso de privacidade
+    setTimeout(showPrivacyConfirm, 1000);
+});
