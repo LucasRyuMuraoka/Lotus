@@ -1,38 +1,38 @@
-.admin-main {
+.admuser-admin-main {
   margin-bottom: 4rem;
 }
 
-.admin-hero {
+.admuser-admin-hero {
   background-color: var(--bg-dark);
   padding: 40px 20px;
   text-align: center;
   margin-bottom: 30px;
 }
 
-.hero-content h1 {
+.admuser-hero-content h1 {
   font-size: 2.5rem;
   color: var(--text-light);
   margin-bottom: 1rem;
 }
 
-.hero-content h1 span {
+.admuser-hero-content h1 span {
   color: var(--primary-color);
 }
 
-.hero-content p {
+.admuser-hero-content p {
   font-size: 1.1rem;
   color: var(--text-muted);
 }
 
-.admin-content {
+.admuser-admin-content {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
   flex: 1;
 }
 
-.admin-form,
-.admin-lista {
+.admuser-admin-form,
+.admuser-admin-lista {
   flex: 1 1 300px;
   padding: 20px;
   background-color: var(--card-bg);
@@ -41,30 +41,30 @@
   box-shadow: var(--shadow-light);
 }
 
-.admin-form h2,
-.admin-lista h2 {
+.admuser-admin-form h2,
+.admuser-admin-lista h2 {
   color: var(--text-light);
   margin: 0 0 15px;
   border-bottom: 2px solid var(--primary-color);
   padding-bottom: 5px;
 }
 
-.form-group {
+.admuser-form-group {
   margin-bottom: 15px;
 }
 
-.form-group label {
+.admuser-form-group label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
   color: var(--text-muted);
 }
 
-.form-group input[type="text"],
-.form-group input[type="password"],
-.form-group input[type="email"],
-.form-group textarea,
-.form-group select {
+.admuser-form-group input[type="text"],
+.admuser-form-group input[type="password"],
+.admuser-form-group input[type="email"],
+.admuser-form-group textarea,
+.admuser-form-group select {
   width: calc(100% - 12px);
   padding: 8px;
   border: 1px solid var(--card-border);
@@ -74,12 +74,12 @@
   color: var(--text-light);
 }
 
-.form-group textarea {
+.admuser-form-group textarea {
   resize: vertical;
   min-height: 80px;
 }
 
-.form-group select {
+.admuser-form-group select {
   appearance: none;
   background-image: url("data:image/svg+xml;charset=UTF-8,<svg fill='%23ffffff' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
   background-repeat: no-repeat;
@@ -88,7 +88,7 @@
   padding-right: 30px;
 }
 
-.admin-form button[type="submit"] {
+.admuser-admin-form button[type="submit"] {
   background-color: var(--primary-color);
   color: var(--text-light);
   padding: 10px 15px;
@@ -99,17 +99,17 @@
   transition: background-color 0.3s ease;
 }
 
-.admin-form button[type="submit"]:hover {
+.admuser-admin-form button[type="submit"]:hover {
   background-color: #c02826;
 }
 
-.admin-lista ul {
+.admuser-admin-lista ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.admin-lista ul li {
+.admuser-admin-lista ul li {
   padding: 10px 0;
   border-bottom: 1px solid var(--card-border);
   display: flex;
@@ -118,16 +118,16 @@
   color: var(--text-light);
 }
 
-.admin-lista ul li:last-child {
+.admuser-admin-lista ul li:last-child {
   border-bottom: none;
 }
 
-.admin-lista ul li span {
+.admuser-admin-lista ul li span {
   flex-grow: 1;
   margin-right: 10px;
 }
 
-.admin-lista ul li .acoes button {
+.admuser-admin-lista ul li .admuser-acoes button {
   background-color: inherit;
   border: none;
   margin-left: 10px;
@@ -136,35 +136,35 @@
   transition: color 0.3s ease;
 }
 
-.admin-lista ul li .acoes button:hover {
+.admuser-admin-lista ul li .admuser-acoes button:hover {
   color: var(--text-light);
   cursor: pointer;
 }
 
-.admin-lista ul li .acoes button.editar {
+.admuser-admin-lista ul li .admuser-acoes button.admuser-editar {
   color: var(--status-preparing);
 }
 
-.admin-lista ul li .acoes button.editar:hover {
+.admuser-admin-lista ul li .admuser-acoes button.admuser-editar:hover {
   color: #d69500;
 }
 
-.admin-lista ul li .acoes button.excluir {
+.admuser-admin-lista ul li .admuser-acoes button.admuser-excluir {
   color: var(--status-canceled);
 }
 
-.admin-lista ul li .acoes button.excluir:hover {
+.admuser-admin-lista ul li .admuser-acoes button.admuser-excluir:hover {
   color: #d0312a;
 }
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .admin-content {
+  .admuser-admin-content {
     flex-direction: column;
   }
 
-  .admin-form,
-  .admin-lista {
+  .admuser-admin-form,
+  .admuser-admin-lista {
     width: 100%;
     margin-bottom: 20px;
   }

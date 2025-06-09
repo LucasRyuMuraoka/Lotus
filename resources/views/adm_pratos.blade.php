@@ -18,10 +18,10 @@
 
     @livewire('admin-header')
 
-    <main class="admin-main">
+    <main class="admpratos-admin-main">
 
-        <section class="admin-hero">
-            <div class="hero-content">
+        <section class="admpratos-admin-hero">
+            <div class="admpratos-hero-content">
                 <h1 class="animate__animated animate__fadeInDown">
                     Gerenciar <span>Pratos</span>
                 </h1>

@@ -19,9 +19,9 @@
 
     @livewire('admin-header')
 
-    <main class="admin-main">
-        <section class="admin-hero">
-            <div class="hero-content">
+    <main class="admuser-edit-admin-main">
+        <section class="admuser-edit-admin-hero">
+            <div class="admuser-edit-hero-content">
                 <h1 class="animate__animated animate__fadeInDown">
                     Editar <span>Usuário</span>
                 </h1>
@@ -30,24 +30,24 @@
                 </p>
             </div>
         </section>
-        <section class="admin-content">
-            <div class="admin-form">
+        <section class="admuser-edit-admin-content">
+            <div class="admuser-edit-admin-form">
                 <h2>Editando Usuário:</h2>
                 <form id="editar-usuario-form" method="post" action="/users/{{ $user->id }}">
                     @method('PUT')
                     @csrf
                     {{-- <input type="hidden" id="usuario-id" name="usuario-id"> --}}
-                    <div class="form-group">
+                    <div class="admuser-edit-form-group">
                         <label for="nome-completo">Nome:</label>
                         <input type="text" id="nome-completo" name="name" required value="{{ $user->name }}">
                         @error('name') <span class="error">{{ $message }}</span> @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="admuser-edit-form-group">
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required value="{{ $user->email }}" disabled>
                         @error('email') <span class="error">{{ $message }}</span> @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="admuser-edit-form-group">
                         <label for="tipo-usuario">Tipo de Usuário:</label>
                         <select id="tipo-usuario" name="role" required>
                             <option value="customer" {{ $user->role === 'customer' ? 'selected' : '' }}>Cliente</option>
@@ -55,17 +55,17 @@
                         </select>
                         @error('role') <span class="error">{{ $message }}</span> @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="admuser-edit-form-group">
                         <label for="nova-senha">Nova Senha:</label>
                         <input type="password" id="nova-senha" name="password" minlength="5">
                         @error('password') <span class="error">{{ $message }}</span> @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="admuser-edit-form-group">
                         <label for="confirmar-nova-senha">Confirmar Nova Senha:</label>
                         <input type="password" id="confirmar-nova-senha" name="password_confirmation" minlength="5">
                     </div>
-                    <button type="submit" class="edit-button">Salvar Alterações</button>
-                    <a href="{{ route('usuarios') }}" class="btn-cancelar">Cancelar</a>
+                    <button type="submit" class="admuser-edit-button">Salvar Alterações</button>
+                    <a href="{{ route('usuarios') }}" class="admuser-btn-cancelar">Cancelar</a>
                 </form>
             </div>
         </section>

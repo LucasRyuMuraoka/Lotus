@@ -21,9 +21,9 @@
 
   @livewire('admin-header')
 
-  <main class="admin-main">
-    <section class="admin-hero">
-      <div class="hero-content">
+  <main class="admhome-admin-main">
+    <section class="admhome-admin-hero">
+      <div class="admhome-hero-content">
         <h1 class="animate__animated animate__fadeInDown">
           Bem-vindo ao <span>Painel Lotus</span>
         </h1>
@@ -33,7 +33,7 @@
       </div>
     </section>
 
-    <section class="admin-content admin-home-content">
+    <section class="admhome-admin-content admin-home-content">
       <div class="quick-access-cards">
         <a href="{{ route('pratos') }}" class="card-link">
           <div class="access-card">

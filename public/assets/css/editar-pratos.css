@@ -1,30 +1,30 @@
-.admin-main {
+.admprato-edit-admin-main {
     min-height: 100vh;
 }
 
-.admin-hero {
+.admprato-edit-admin-hero {
     background-color: var(--bg-dark);
     padding: 40px 20px;
     text-align: center;
     margin-bottom: 30px;
 }
 
-.hero-content h1 {
+.admprato-edit-hero-content h1 {
     font-size: 2.5rem;
     color: var(--text-light);
     margin-bottom: 1rem;
 }
 
-.hero-content h1 span {
+.admprato-edit-hero-content h1 span {
     color: var(--primary-color);
 }
 
-.hero-content p {
+.admprato-edit-hero-content p {
     font-size: 1.1rem;
     color: var(--text-muted);
 }
 
-.admin-content {
+.admprato-edit-admin-content {
     max-width: 700px;
     margin: 0 auto;
     background-color: #fff;
@@ -35,25 +35,25 @@
     flex: 1;
 }
 
-.admin-form h2 {
+.admprato-edit-admin-form h2 {
     margin-bottom: 1.5rem;
     color: #222;
 }
 
-.form-group {
+.admprato-edit-form-group {
     margin-bottom: 1.2rem;
 }
 
-.form-group label {
+.admprato-edit-form-group label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
     color: #444;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.admprato-edit-form-group input,
+.admprato-edit-form-group select,
+.admprato-edit-form-group textarea {
     width: 100%;
     padding: 0.7rem;
     border: 1px solid #ccc;
@@ -61,7 +61,7 @@
     font-size: 1rem;
 }
 
-.edit-button {
+.admprato-edit-button {
     background-color: #ff0000;
     color: white;
     border: none;
@@ -72,11 +72,11 @@
     transition: background-color 0.3s ease;
 }
 
-.edit-button:hover {
+.admprato-edit-button:hover {
     background-color: #8e2f2f;
 }
 
-.btn-cancelar {
+.admprato-btn-cancelar {
     display: inline-block;
     margin-left: 1rem;
     color: #000000;
@@ -85,20 +85,20 @@
     transition: color 0.3s ease;
 }
 
-.btn-cancelar:hover {
+.admprato-btn-cancelar:hover {
     color: #151212;
 }
 
 @media (max-width: 600px) {
-    .admin-content {
+    .admprato-edit-admin-content {
         padding: 1rem;
     }
 
-    .hero-content h1 {
+    .admprato-edit-hero-content h1 {
         font-size: 2rem;
     }
 
-    .admin-form h2 {
+    .admprato-edit-admin-form h2 {
         font-size: 1.2rem;
     }
 }

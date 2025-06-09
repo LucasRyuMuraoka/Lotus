@@ -1,11 +1,11 @@
-.admin-main {
+.admhome-admin-main {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin-bottom: 0;
 }
 
-.admin-hero {
+.admhome-admin-hero {
     background: var(--bg-dark);
     color: #fff;
     padding: 40px 20px;
@@ -13,23 +13,23 @@
     text-align: center;
 }
 
-.admin-hero h1 {
+.admhome-admin-hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--text-light)
 }
 
-.admin-hero h1 span {
+.admhome-admin-hero h1 span {
     color: var(--primary-color);
 }
 
-.admin-hero p {
+.admhome-admin-hero p {
     font-size: 1.1rem;
     color: var(--text-muted);
 }
 
 /* Conteúdo principal */
-.admin-content {
+.admhome-admin-content {
     padding: 3rem 2rem;
     max-width: 1200px;
     margin: auto;
@@ -38,7 +38,7 @@
     flex-direction: column;
 }
 
-.admin-content h2 {
+.admhome-dmin-content h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: var(--primary-color);

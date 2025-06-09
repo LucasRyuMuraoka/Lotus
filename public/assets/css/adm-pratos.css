@@ -1,38 +1,38 @@
-.admin-main {
+.admpratos-admin-main {
     margin-bottom: 4rem;
 }
 
-.admin-hero {
+.admpratos-admin-hero {
     background-color: var(--bg-dark);
     padding: 40px 20px;
     text-align: center;
     margin-bottom: 30px;
 }
 
-.hero-content h1 {
+.admpratos-hero-content h1 {
     font-size: 2.5rem;
     color: var(--text-light);
     margin-bottom: 1rem;
 }
 
-.hero-content h1 span {
+.admpratos-hero-content h1 span {
     color: var(--primary-color);
 }
 
-.hero-content p {
+.admpratos-hero-content p {
     font-size: 1.1rem;
     color: var(--text-muted);
 }
 
-.admin-content {
+.admpratos-admin-content {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
     flex: 1;
 }
 
-.admin-form,
-.admin-lista {
+.admpratos-admin-form,
+.admpratos-admin-lista {
     flex: 1 1 300px;
     padding: 20px;
     background-color: var(--card-bg);
@@ -41,8 +41,8 @@
     box-shadow: var(--shadow-light);
 }
 
-.admin-form h2,
-.admin-lista h2 {
+.admpratos-admin-form h2,
+.admpratos-admin-lista h2 {
     color: var(--text-light);
     margin-top: 0;
     margin-bottom: 15px;
@@ -50,22 +50,22 @@
     padding-bottom: 5px;
 }
 
-.form-group {
+.admpratos-form-group {
     margin-bottom: 15px;
 }
 
-.form-group label {
+.admpratos-form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     color: var(--text-muted);
 }
 
-.form-group input[type="text"],
-.form-group input[type="number"],
-.form-group input[type="url"],
-.form-group textarea,
-.form-group select {
+.admpratos-form-group input[type="text"],
+.admpratos-form-group input[type="number"],
+.admpratos-form-group input[type="url"],
+.admpratos-form-group textarea,
+.admpratos-form-group select {
     width: calc(100% - 12px);
     padding: 8px;
     border: 1px solid var(--card-border);
@@ -75,12 +75,12 @@
     color: var(--text-light);
 }
 
-.form-group textarea {
+.admpratos-form-group textarea {
     resize: vertical;
     min-height: 80px;
 }
 
-.form-group select {
+.admpratos-form-group select {
     appearance: none;
     background-image: url('data:image/svg+xml;charset=UTF-8,<svg fill="%23ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
     background-repeat: no-repeat;
@@ -89,7 +89,7 @@
     padding-right: 30px;
 }
 
-.admin-form button[type="submit"] {
+.admpratos-admin-form button[type="submit"] {
     background-color: var(--primary-color);
     color: var(--text-light);
     padding: 10px 15px;
@@ -100,17 +100,17 @@
     transition: background-color 0.3s ease;
 }
 
-.admin-form button[type="submit"]:hover {
+.admpratos-admin-form button[type="submit"]:hover {
     background-color: #c02826;
 }
 
-.admin-lista ul {
+.admpratos-admin-lista ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.admin-lista ul li {
+.admpratos-admin-lista ul li {
     padding: 10px 0;
     border-bottom: 1px solid var(--card-border);
     display: flex;
@@ -119,16 +119,16 @@
     color: var(--text-light);
 }
 
-.admin-lista ul li:last-child {
+.admpratos-admin-lista ul li:last-child {
     border-bottom: none;
 }
 
-.admin-lista ul li span {
+.admpratos-admin-lista ul li span {
     flex-grow: 1;
     margin-right: 10px;
 }
 
-.admin-lista ul li .acoes button {
+.admpratos-admin-lista ul li .admpratos-acoes button {
     background-color: inherit;
     border: none;
     margin-left: 10px;
@@ -137,34 +137,34 @@
     transition: color 0.3s ease;
 }
 
-.admin-lista ul li .acoes button:hover {
+.admpratos-admin-lista ul li .admpratos-acoes button:hover {
     color: var(--text-light);
     cursor: pointer;
 }
 
-.admin-lista ul li .acoes button.editar {
+.admpratos-admin-lista ul li .admpratos-acoes button.admpratos-editar {
     color: var(--status-preparing);
 }
 
-.admin-lista ul li .acoes button.editar:hover {
+.admpratos-admin-lista ul li .admpratos-acoes button.admpratos-editar:hover {
     color: #d69500;
 }
 
-.admin-lista ul li .acoes button.excluir {
+.admpratos-admin-lista ul li .admpratos-acoes button.admpratos-excluir {
     color: var(--status-canceled);
 }
 
-.admin-lista ul li .acoes button.excluir:hover {
+.admpratos-admin-lista ul li .admpratos-acoes button.admpratos-excluir:hover {
     color: #d0312a;
 }
 
 @media (max-width: 768px) {
-    .admin-content {
+    .admpratos-admin-content {
         flex-direction: column;
     }
 
-    .admin-form,
-    .admin-lista {
+    .admpratos-admin-form,
+    .admpratos-admin-lista {
         width: 100%;
         margin-bottom: 20px;
     }

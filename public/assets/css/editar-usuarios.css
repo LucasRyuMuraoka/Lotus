@@ -1,30 +1,30 @@
-.admin-main {
+.admuser-edit-admin-main {
     min-height: 100vh;
 }
 
-.admin-hero {
+.admuser-edit-admin-hero {
     background-color: var(--bg-dark);
     padding: 40px 20px;
     text-align: center;
     margin-bottom: 30px;
 }
 
-.hero-content h1 {
+.admuser-edit-hero-content h1 {
     font-size: 2.5rem;
     color: var(--text-light);
     margin-bottom: 1rem;
 }
 
-.hero-content h1 span {
+.admuser-edit-hero-content h1 span {
     color: var(--primary-color);
 }
 
-.hero-content p {
+.admuser-edit-hero-content p {
     font-size: 1.1rem;
     color: var(--text-muted);
 }
 
-.admin-content {
+.admuser-edit-admin-content {
     max-width: 700px;
     margin: 0 auto;
     background-color: white;
@@ -35,25 +35,25 @@
     flex: 1;
 }
 
-.admin-form h2 {
+.admuser-edit-admin-form h2 {
     margin-bottom: 1.5rem;
     color: #222;
     font-size: 1.5rem;
 }
 
-.form-group {
+.admuser-edit-form-group {
     margin-bottom: 1.2rem;
 }
 
-.form-group label {
+.admuser-edit-form-group label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
     color: #000000;
 }
 
-.form-group input,
-.form-group select {
+.admuser-edit-form-group input,
+.admuser-edit-form-group select {
     width: 100%;
     padding: 0.7rem;
     border: 1px solid #ccc;
@@ -61,7 +61,7 @@
     font-size: 1rem;
 }
 
-.edit-button {
+.admuser-edit-button {
     background-color: #ff0000;
     color: white;
     border: none;
@@ -72,11 +72,11 @@
     transition: background-color 0.3s ease;
 }
 
-.edit-button:hover {
+.admuser-edit-button:hover {
     background-color: #d71a1a;
 }
 
-.btn-cancelar {
+.admuser-btn-cancelar {
     display: inline-block;
     margin-left: 1rem;
     color: #000000;
@@ -85,20 +85,20 @@
     transition: color 0.3s ease;
 }
 
-.btn-cancelar:hover {
+.admuser-btn-cancelar:hover {
     color: #151212;
 }
 
 @media (max-width: 600px) {
-    .admin-content {
+    .admuser-edit-admin-content {
         padding: 1rem;
     }
 
-    .hero-content h1 {
+    .admuser-edit-hero-content h1 {
         font-size: 2rem;
     }
 
-    .admin-form h2 {
+    .admuser-edit-admin-form h2 {
         font-size: 1.2rem;
     }
 }

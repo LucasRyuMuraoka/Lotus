@@ -19,10 +19,10 @@
 
     @livewire('admin-header')
 
-    <main class="admin-main">
+    <main class="admprato-edit-admin-main">
 
-        <section class="admin-hero">
-            <div class="hero-content">
+        <section class="admprato-edit-admin-hero">
+            <div class="admprato-edit-hero-content">
                 <h1 class="animate__animated animate__fadeInDown">
                     Editar <span>Prato</span>
                 </h1>
@@ -32,8 +32,8 @@
             </div>
         </section>
 
-        <section class="admin-content">
-            <div class="admin-form">
+        <section class="admprato-edit-admin-content">
+            <div class="admprato-edit-admin-form">
                 <h2>Editando Prato:</h2>
                 <form id="editar-prato-form" method="post" action="/products/{{ $product->id }}"
                     enctype="multipart/form-data">
@@ -41,20 +41,20 @@
                     @csrf
                     {{-- <input type="hidden" id="prato-id" name="id" value="{{ $product->id }}" /> --}}
 
-                    <div class="form-group">
+                    <div class="admprato-edit-form-group">
                         <label for="name">Nome do Prato:</label>
                         <input type="text" id="nome-prato" name="name" required value="{{ $product->name }}" />
                         @error('name') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
-                    <div class="form-group">
+                    <div class="admprato-edit-form-group">
                         <label for="descricao">Descrição:</label>
                         <textarea id="descricao" name="description" rows="4"
                             required>{{ $product->description }}</textarea>
                         @error('description') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
-                    <div class="form-group">
+                    <div class="admprato-edit-form-group">
                         <label for="categoria">Categoria:</label>
                         <select id="categoria" name="category_id" required>
                             @foreach($categories as $category)
@@ -64,22 +64,22 @@
                         @error('category_id') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
-                    <div class="form-group">
+                    <div class="admprato-edit-form-group">
                         <label for="preco">Preço (R$):</label>
                         <input type="number" id="preco" name="price" step="0.01" required
                             value="{{ $product->price }}" />
                         @error('price') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
-                    <div class="form-group">
+                    <div class="admprato-edit-form-group">
                         <label for="imagem">URL da Imagem:</label>
                         <input type="url" id="imagem" name="url_image" placeholder="https://..." required
                             value="{{ $product->url_image }}" />
                         @error('url_image') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
-                    <button type="submit" class="edit-button">Salvar Alterações</button>
-                    <a href="{{ route('pratos') }}" class="btn-cancelar">Cancelar</a>
+                    <button type="submit" class="admprato-edit-button">Salvar Alterações</button>
+                    <a href="{{ route('pratos') }}" class="admprato-btn-cancelar">Cancelar</a>
                 </form>
             </div>
         </section>
