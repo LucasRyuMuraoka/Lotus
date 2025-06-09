@@ -2,9 +2,9 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lotus - Política de Privacidade</title>
     <link rel="stylesheet" href="{{ asset('assets/css/normalize/normalize.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/global/global.css') }}" />
 
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/pp.css') }}" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="icon" href="{{ asset('/assets/images/torii gate guia logo.jpg') }}">
+    <link rel="icon" href="{{ Asset('/assets/images/icon.png') }}" />
     @livewireStyles
 </head>
 
@@ -25,7 +25,10 @@
             <div class="hero-content">
                 <h1 class="animate__animated animate__fadeInDown">Políticas de privacidade</h1>
                 <p class="animate__animated animate__fadeInDown">Bem-vindo ao Restaurante Lotus
-                    O Restaurante Lotus, inscrito no CNPJ nº XX.XXX.XXX/0001-XX, localizado na [endereço completo], tem o compromisso de proteger e respeitar a privacidade de nossos clientes. Esta Política de Privacidade explica como coletamos, usamos, armazenamos e protegemos suas informações pessoais quando você utiliza nossos serviços, visita nosso estabelecimento ou acessa nosso website.
+                    O Restaurante Lotus, inscrito no CNPJ nº XX.XXX.XXX/0001-XX, localizado na [endereço completo], tem
+                    o compromisso de proteger e respeitar a privacidade de nossos clientes. Esta Política de Privacidade
+                    explica como coletamos, usamos, armazenamos e protegemos suas informações pessoais quando você
+                    utiliza nossos serviços, visita nosso estabelecimento ou acessa nosso website.
 
                     Informações que Coletamos
                     Dados Pessoais Básicos
@@ -70,7 +73,8 @@
                     Cooperar com autoridades competentes quando necessário
 
                     Compartilhamento de Informações
-                    O Restaurante Lotus não vende, aluga ou comercializa suas informações pessoais. Compartilhamos dados apenas nas seguintes situações:
+                    O Restaurante Lotus não vende, aluga ou comercializa suas informações pessoais. Compartilhamos dados
+                    apenas nas seguintes situações:
 
                     Prestadores de Serviços
                     Empresas de entrega (apenas dados necessários para a entrega)
@@ -129,19 +133,24 @@
                     Cookies de desempenho: para melhorar a experiência do usuário
                     Cookies de marketing: para personalizar ofertas (apenas com consentimento)
                     Gerenciamento de Cookies
-                    Você pode gerenciar suas preferências de cookies através das configurações do seu navegador ou através do nosso painel de preferências disponível no website.
+                    Você pode gerenciar suas preferências de cookies através das configurações do seu navegador ou
+                    através do nosso painel de preferências disponível no website.
 
                     Menores de Idade
-                    O Restaurante Lotus não coleta intencionalmente dados pessoais de menores de 18 anos sem o consentimento dos pais ou responsáveis legais. Caso identifiquemos tal coleta, os dados serão imediatamente excluídos.
+                    O Restaurante Lotus não coleta intencionalmente dados pessoais de menores de 18 anos sem o
+                    consentimento dos pais ou responsáveis legais. Caso identifiquemos tal coleta, os dados serão
+                    imediatamente excluídos.
 
                     Alterações nesta Política
-                    Esta Política de Privacidade pode ser atualizada periodicamente para refletir mudanças em nossas práticas ou na legislação aplicável. Notificaremos sobre alterações significativas através de:
+                    Esta Política de Privacidade pode ser atualizada periodicamente para refletir mudanças em nossas
+                    práticas ou na legislação aplicável. Notificaremos sobre alterações significativas através de:
                     E-mail para clientes cadastrados
                     Aviso em nosso website
                     Comunicação em nosso estabelecimento
 
                     Contato e Exercício de Direitos
-                    Para exercer seus direitos, esclarecer dúvidas ou fazer solicitações relacionadas aos seus dados pessoais, entre em contato conosco:
+                    Para exercer seus direitos, esclarecer dúvidas ou fazer solicitações relacionadas aos seus dados
+                    pessoais, entre em contato conosco:
                     Dados para Contato
                     E-mail: privacidade@restaurantelotus.com.br
                     Telefone: (XX) XXXX-XXXX

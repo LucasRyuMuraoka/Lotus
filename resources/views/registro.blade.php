@@ -2,16 +2,17 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lotus - Cadastro</title>
     <link rel="stylesheet" href="{{ asset('assets/css/normalize/normalize.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/global/global.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/cadastro.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/cadastro.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="{{ asset('/assets/images/torii gate guia logo.jpg') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" href="{{ Asset('/assets/images/icon.png') }}" />
     @livewireStyles
 </head>
 

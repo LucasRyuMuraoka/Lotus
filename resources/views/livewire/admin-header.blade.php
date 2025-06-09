@@ -6,9 +6,12 @@
     </div>
     <nav class="h-nav">
         <ul class="n-menu">
-            <li><a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">Painel Admin</a></li>
-            <li><a href="{{ route('pratos') }}" class="{{ request()->routeIs('pratos') ? 'active' : '' }}">Gerenciar Pratos</a></li>
-            <li><a href="{{ route('usuarios') }}" class="{{ request()->routeIs('usuarios') ? 'active' : '' }}">Gerenciar Usuários</a></li>
+            <li><a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">Painel
+                    Admin</a></li>
+            <li><a href="{{ route('pratos') }}" class="{{ request()->routeIs('pratos') ? 'active' : '' }}">Gerenciar
+                    Pratos</a></li>
+            <li><a href="{{ route('usuarios') }}" class="{{ request()->routeIs('usuarios') ? 'active' : '' }}">Gerenciar
+                    Usuários</a></li>
             <li>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

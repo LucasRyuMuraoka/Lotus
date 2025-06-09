@@ -92,7 +92,6 @@ function showPrivacyConfirm() {
                 // Tenta abrir a política de privacidade em nova aba
                 const newWindow = window.open('./politica_privacidade', '_blank');
 
-                // Verifica se conseguiu abrir a nova aba
                 if (newWindow) {
                     // Aguarda um pouco para dar tempo do usuário ler
                     setTimeout(() => {

@@ -1,6 +1,8 @@
 <footer class="footer">
     <div class="f-logo">
-        <p>Copyright © 2025 | Lotus</p>
+        <a href="{{ route('politica_privacidade') }}">
+            <p>Copyright © 2025 | Lotus</p>
+        </a>
     </div>
 
     <div class="f-social">

@@ -61,7 +61,7 @@
     font-size: 1rem;
 }
 
-button[type="submit"] {
+.edit-button {
     background-color: #ff0000;
     color: white;
     border: none;
@@ -72,7 +72,7 @@ button[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
+.edit-button:hover {
     background-color: #8e2f2f;
 }
 

@@ -2,15 +2,15 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Lotus - Edição de Usuário</title>
     <link rel="stylesheet" href="{{ asset('assets/css/normalize/normalize.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/global/global.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/editar-usuarios.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/editar-usuarios.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="icon" href="{{ asset('/assets/images/torii gate guia logo.jpg') }}">
+    <link rel="icon" href="{{ Asset('/assets/images/tori-icon.jpg') }}" />
 
     @livewireStyles
 </head>
@@ -64,7 +64,7 @@
                         <label for="confirmar-nova-senha">Confirmar Nova Senha:</label>
                         <input type="password" id="confirmar-nova-senha" name="password_confirmation" minlength="5">
                     </div>
-                    <button type="submit">Salvar Alterações</button>
+                    <button type="submit" class="edit-button">Salvar Alterações</button>
                     <a href="{{ route('usuarios') }}" class="btn-cancelar">Cancelar</a>
                 </form>
             </div>

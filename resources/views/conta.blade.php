@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/perfil.css') }}" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="icon" href="{{ asset('/assets/images/torii gate guia logo.jpg') }}">
+    <link rel="icon" href="{{ Asset('/assets/images/icon.png') }}" />
 
-    <title>Meu Perfil - Lotus</title>
+    <title>Lotus - Meu Perfil</title>
     @livewireStyles
 </head>
 
@@ -43,7 +43,8 @@
                 <div class="account-help-options">
                     <div class="account-help-option">
                         <div class="account-help-icon">
-                            <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="Atendimento" width="40" />
+                            <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="Atendimento"
+                                width="40" />
                         </div>
                         <h3>Atendimento</h3>
                         <p>Fale com um de nossos atendentes online.</p>
@@ -59,9 +60,7 @@
                     </div>
                     <div class="account-help-option">
                         <div class="account-help-icon">
-                            <img
-                                src="https://cdn-icons-png.flaticon.com/512/1384/1384023.png"
-                                alt="WhatsApp"
+                            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384023.png" alt="WhatsApp"
                                 width="40" />
                         </div>
                         <h3>WhatsApp</h3>
@@ -77,7 +76,8 @@
     <div class="pre-footer-line"></div>
     @livewire('customer-footer')
 
-    {{-- <script src="{{ asset('assets/js/perfil.js') }}"></script> --}}
+    {{--
+    <script src="{{ asset('assets/js/perfil.js') }}"></script> --}}
     @livewireScripts
 </body>
 

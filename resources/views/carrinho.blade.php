@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/carrinho.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="icon" href="{{ asset('/assets/images/torii gate guia logo.jpg') }}">
+    <link rel="icon" href="{{ Asset('/assets/images/icon.png') }}" />
 
-    <title>Carrinho - Lotus</title>
+    <title>Lotus - Carrinho</title>
     @livewireStyles
 </head>
 
@@ -41,7 +41,8 @@
 
     @livewire('customer-footer')
 
-    {{-- <script src="{{ asset('assets/js/carrinho.js') }}"></script> --}}
+    {{--
+    <script src="{{ asset('assets/js/carrinho.js') }}"></script> --}}
     @livewireScripts
     @stack('scripts')
 </body>

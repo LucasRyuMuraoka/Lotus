@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Lotus - Editar Prato</title>
+    <title>Admin Lotus - Edição de Prato</title>
     <link rel="stylesheet" href="{{ asset('assets/css/normalize/normalize.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/global/global.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/editar-pratos.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="icon" href="{{ asset('/assets/images/torii gate guia logo.jpg') }}">
+    <link rel="icon" href="{{ Asset('/assets/images/tori-icon.jpg') }}">
 
     @livewireStyles
 </head>
@@ -35,7 +35,8 @@
         <section class="admin-content">
             <div class="admin-form">
                 <h2>Editando Prato:</h2>
-                <form id="editar-prato-form" method="post" action="/products/{{ $product->id }}" enctype="multipart/form-data">
+                <form id="editar-prato-form" method="post" action="/products/{{ $product->id }}"
+                    enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
                     {{-- <input type="hidden" id="prato-id" name="id" value="{{ $product->id }}" /> --}}
@@ -48,7 +49,8 @@
 
                     <div class="form-group">
                         <label for="descricao">Descrição:</label>
-                        <textarea id="descricao" name="description" rows="4" required>{{ $product->description }}</textarea>
+                        <textarea id="descricao" name="description" rows="4"
+                            required>{{ $product->description }}</textarea>
                         @error('description') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
@@ -56,7 +58,7 @@
                         <label for="categoria">Categoria:</label>
                         <select id="categoria" name="category_id" required>
                             @foreach($categories as $category)
-                            <option value="{{ $category->id }}" {{ $category->id === $product->category_id ? 'selected' : '' }}>{{ $category->name }}</option>
+                                <option value="{{ $category->id }}" {{ $category->id === $product->category_id ? 'selected' : '' }}>{{ $category->name }}</option>
                             @endforeach
                         </select>
                         @error('category_id') <span class="error">{{ $message }}</span> @enderror
@@ -64,17 +66,19 @@
 
                     <div class="form-group">
                         <label for="preco">Preço (R$):</label>
-                        <input type="number" id="preco" name="price" step="0.01" required value="{{ $product->price }}" />
+                        <input type="number" id="preco" name="price" step="0.01" required
+                            value="{{ $product->price }}" />
                         @error('price') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="imagem">URL da Imagem:</label>
-                        <input type="url" id="imagem" name="url_image" placeholder="https://..." required value="{{ $product->url_image }}" />
+                        <input type="url" id="imagem" name="url_image" placeholder="https://..." required
+                            value="{{ $product->url_image }}" />
                         @error('url_image') <span class="error">{{ $message }}</span> @enderror
                     </div>
 
-                    <button type="submit">Salvar Alterações</button>
+                    <button type="submit" class="edit-button">Salvar Alterações</button>
                     <a href="{{ route('pratos') }}" class="btn-cancelar">Cancelar</a>
                 </form>
             </div>
