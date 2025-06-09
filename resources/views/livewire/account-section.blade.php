@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="telefone">Telefone*</label>
-                                    <input wire:model.defer="phone" type="tel" id="telefone" name="telefone"
+                                    <input wire:model.defer="phone" type="tel" pattern="^\(\d{2}\)\s\d{4,5}-\d{4}$" placeholder="(11) 12345-6789" id="telefone" name="telefone"
                                         value="{{ $phone }}" />
                                 </div>
                             </div>

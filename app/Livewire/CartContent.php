@@ -44,6 +44,7 @@ class CartContent extends Component
             $item = $this->cart->items()->where('product_id', $productId)->first();
             if ($item) {
                 $item->increment('quantity');
+                $this->dispatch('show-notification', ['message' => 'Quantidade atualizada!', 'type' => 'success', 'duration' => 3000]);
             }
             $this->refreshCart();
         } else {
@@ -51,6 +52,7 @@ class CartContent extends Component
 
             if (isset($cart[$productId])) {
                 $cart[$productId]['quantity']++;
+                $this->dispatch('show-notification', ['message' => 'Quantidade atualizada!', 'type' => 'success', 'duration' => 3000]);
             }
             session()->put('cart', $cart);
             $this->cart = collect($cart);
@@ -65,8 +67,10 @@ class CartContent extends Component
             if ($item) {
                 if ($item->quantity > 1) {
                     $item->decrement('quantity');
+                    $this->dispatch('show-notification', ['message' => 'Quantidade atualizada!', 'type' => 'success', 'duration' => 3000]);
                 } else {
                     $item->delete();
+                    $this->dispatch('show-notification', ['message' => 'Item removido do carrinho!', 'type' => 'success', 'duration' => 3000]);
                 }
             }
 
@@ -77,8 +81,10 @@ class CartContent extends Component
             if (isset($cart[$productId])) {
                 if ($cart[$productId]['quantity'] > 1) {
                     $cart[$productId]['quantity']--;
+                    $this->dispatch('show-notification', ['message' => 'Quantidade atualizada!', 'type' => 'success', 'duration' => 3000]);
                 } else {
                     unset($cart[$productId]);
+                    $this->dispatch('show-notification', ['message' => 'Item removido do carrinho!', 'type' => 'success', 'duration' => 3000]);
                 }
             }
 
@@ -92,6 +98,7 @@ class CartContent extends Component
         if (Auth::check()) {
             $this->cart->items()->where('product_id', $productId)->delete();
             $this->refreshCart();
+            $this->dispatch('show-notification', ['message' => 'Item removido do carrinho!', 'type' => 'success', 'duration' => 3000]);
         } else {
             $cart = session()->get('cart', []);
 
@@ -99,6 +106,7 @@ class CartContent extends Component
                 unset($cart[$productId]);
                 session()->put('cart', $cart);
                 $this->cart = collect($cart);
+                $this->dispatch('show-notification', ['message' => 'Item removido do carrinho!', 'type' => 'success', 'duration' => 3000]);
             }
         }
     }
@@ -111,67 +119,108 @@ class CartContent extends Component
     public function finalizarCompra()
     {
         if (!Auth::check()) {
-            session()->flash('error', 'Você precisa estar logado para finalizar a compra.');
+            $this->dispatch('show-notification', [
+                'message' => 'Você precisa estar logado para finalizar a compra.',
+                'type' => 'error',
+                'duration' => 5000
+            ]);
             return;
         }
 
         if ($this->cart->items->isEmpty()) {
-            session()->flash('error', 'Seu carrinho está vazio.');
+            $this->dispatch('show-notification', [
+                'message' => 'Seu carrinho está vazio.',
+                'type' => 'error',
+                'duration' => 5000
+            ]);
             return;
         }
 
-        $this->validate([
-            'zip_code' => 'required',
-            'street' => 'required',
-            'number' => 'required',
-            'district' => 'required',
-            'city' => 'required',
-        ]);
-
-        $subtotal = $this->cart->items->sum(fn($item) => $item->product->price * $item->quantity);
-        $total = $subtotal + $this->taxaEntrega;
-
-        $order = Order::create([
-            'user_id' => Auth::id(),
-            'zip_code' => $this->zip_code,
-            'street' => $this->street,
-            'number' => $this->number,
-            'complement' => $this->complement,
-            'district' => $this->district,
-            'city' => $this->city,
-            'status' => 'Em preparo',
-            'total' => $total,
-        ]);
-
-        foreach ($this->cart->items as $item) {
-            $order->items()->create([
-                'product_id' => $item->product_id,
-                'quantity' => $item->quantity,
-                'price' => $item->product->price,
+        try {
+            $this->validate([
+                'zip_code' => 'required',
+                'street' => 'required',
+                'number' => 'required',
+                'district' => 'required',
+                'city' => 'required',
+            ], [
+                'zip_code.required' => 'O CEP é obrigatório.',
+                'street.required' => 'A rua é obrigatória.',
+                'number.required' => 'O número é obrigatório.',
+                'district.required' => 'O bairro é obrigatório.',
+                'city.required' => 'A cidade é obrigatória.',
             ]);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            $errors = $e->validator->errors()->all();
+            $errorMessage = 'Preencha todos os campos obrigatórios: ' . implode(', ', $errors);
+            
+            $this->dispatch('show-notification', [
+                'message' => $errorMessage,
+                'type' => 'error',
+                'duration' => 6000
+            ]);
+            return;
         }
 
-        $this->cart->status = 'completed';
-        $this->cart->save();
+        try {
+            $subtotal = $this->cart->items->sum(fn($item) => $item->product->price * $item->quantity);
+            $total = $subtotal + $this->taxaEntrega;
 
-        $this->cart = Cart::create([
-            'user_id' => Auth::id(),
-            'status' => 'active',
-        ]);
+            $order = Order::create([
+                'user_id' => Auth::id(),
+                'zip_code' => $this->zip_code,
+                'street' => $this->street,
+                'number' => $this->number,
+                'complement' => $this->complement,
+                'district' => $this->district,
+                'city' => $this->city,
+                'status' => 'Em preparo',
+                'total' => $total,
+            ]);
 
-        $this->reset([
-            'zip_code',
-            'street',
-            'number',
-            'complement',
-            'district',
-            'city',
-        ]);
+            foreach ($this->cart->items as $item) {
+                $order->items()->create([
+                    'product_id' => $item->product_id,
+                    'quantity' => $item->quantity,
+                    'price' => $item->product->price,
+                ]);
+            }
 
-        $this->dispatch('cart-updated');
-        session()->flash('success', 'Pedido finalizado com sucesso!');
+            $this->cart->status = 'completed';
+            $this->cart->save();
 
-        return redirect()->to(route('conta', ['tab' => 'pedidos']));
+            $this->cart = Cart::create([
+                'user_id' => Auth::id(),
+                'status' => 'active',
+            ]);
+
+            $this->reset([
+                'zip_code',
+                'street',
+                'number',
+                'complement',
+                'district',
+                'city',
+            ]);
+
+            $this->dispatch('cart-updated');
+            
+            $this->dispatch('show-notification', [
+                'message' => 'Pedido finalizado com sucesso! Redirecionando...',
+                'type' => 'success',
+                'duration' => 3000
+            ]);
+
+            // Delay no redirect para mostrar a notificação
+            $this->js('setTimeout(() => { window.location.href = "' . route('conta', ['tab' => 'pedidos']) . '"; }, 2000);');
+
+        } catch (\Exception $e) {
+            $this->dispatch('show-notification', [
+                'message' => 'Erro ao finalizar pedido. Tente novamente.',
+                'type' => 'error',
+                'duration' => 5000
+            ]);
+        }
     }
 
     public function render()

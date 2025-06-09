@@ -118,18 +118,6 @@
                 <button wire:click="finalizarCompra" id="finalizar-compra" class="finalizar-btn">
                     Finalizar Pedido
                 </button>
-
-                @if (session()->has('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-
-                @if (session()->has('error'))
-                    <div class="alert alert-error">
-                        {{ session('error') }}
-                    </div>
-                @endif
             </div>
 
         </div>
@@ -153,11 +141,19 @@
                                 @this.set('district', data.bairro || '');
                                 @this.set('city', data.localidade || '');
                             } else {
-                                alert('CEP não encontrado!');
+                                Livewire.dispatch('show-notification', {
+                                    message: 'CEP não encontrado!',
+                                    type: 'error',
+                                    duration: 4000
+                                });
                             }
                         })
                         .catch(() => {
-                            alert('Erro ao buscar o CEP.');
+                            Livewire.dispatch('show-notification', {
+                                message: 'Erro ao buscar o CEP. Tente novamente.',
+                                type: 'error',
+                                duration: 4000
+                            });
                         });
                 }
             });
