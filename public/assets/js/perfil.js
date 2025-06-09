@@ -58,38 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Botão de alteração de foto
-    const avatarChangeButton = document.querySelector('.avatar-change-btn');
-    if (avatarChangeButton) {
-        avatarChangeButton.addEventListener('click', function () {
-            // Criar um input de arquivo invisível
-            const fileInput = document.createElement('input');
-            fileInput.type = 'file';
-            fileInput.accept = 'image/*';
-
-            // Disparar o clique no input
-            fileInput.click();
-
-            // Quando um arquivo for selecionado
-            fileInput.addEventListener('change', function () {
-                if (fileInput.files && fileInput.files[0]) {
-                    const reader = new FileReader();
-
-                    reader.onload = function (e) {
-                        // Atualizar a imagem do avatar
-                        const avatarImg = document.querySelector('.avatar-image img');
-                        if (avatarImg) {
-                            avatarImg.src = e.target.result;
-                            showNotification('Foto de perfil atualizada!', 'success');
-                        }
-                    };
-
-                    reader.readAsDataURL(fileInput.files[0]);
-                }
-            });
-        });
-    }
-
     // Função para exibir notificações
     function showNotification(message, type = 'info') {
         // Verificar se já existe uma notificação e removê-la

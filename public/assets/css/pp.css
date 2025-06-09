@@ -1,5 +1,4 @@
-
-.c-section-hero {
+.pp-c-section-hero {
   width: 100%;
   min-height: 400px; 
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://media.istockphoto.com/id/1131975853/pt/foto/sushi-set-sashimi-and-sushi-rolls-served-on-stone-slate.jpg?s=612x612&w=0&k=20&c=7G_0qkWpgfbwQlGLVMimQA8JQtfUn8fX5Rj5zGt7D1s=');
@@ -14,7 +13,7 @@
   padding: 2rem 0; 
 }
 
-.hero-content {
+.pp-hero-content {
   max-width: 1000px; 
   padding: 2rem;
   background-color: rgba(0, 0, 0, 0.8); 
@@ -22,7 +21,7 @@
   margin: 2rem auto;
 }
 
-.hero-content h1 {
+.pp-hero-content h1 {
   font-size: 2.5rem; 
   margin-bottom: 2rem;
   font-weight: 700;
@@ -32,7 +31,7 @@
   padding-bottom: 1rem;
 }
 
-.hero-content p {
+.pp-hero-content p {
   font-size: 1rem; 
   line-height: 1.8; 
   color: var(--text-light);
@@ -47,56 +46,56 @@
 }
 
 
-.hero-content p strong,
-.hero-content p b {
+.pp-hero-content p strong,
+.pp-hero-content p b {
   color: var(--primary-color);
   font-weight: 600;
 }
 
 
-.hero-content p::first-line {
+.pp-hero-content p::first-line {
   font-weight: 600;
   font-size: 1.1rem;
 }
 
 
-.hero-content p + p {
+.pp-hero-content p + p {
   margin-top: 1.5rem;
 }
 
 @media (max-width: 992px) {
-  .hero-content {
+  .pp-hero-content {
     max-width: 95%;
     padding: 1.5rem;
   }
   
-  .hero-content h1 {
+  .pp-hero-content h1 {
     font-size: 2rem;
   }
   
-  .hero-content p {
+  .pp-hero-content p {
     font-size: 0.95rem;
     line-height: 1.7;
   }
 }
 
 @media (max-width: 768px) {
-  .c-section-hero {
+  .pp-c-section-hero {
     min-height: auto;
     padding: 1rem 0;
   }
   
-  .hero-content {
+  .pp-hero-content {
     margin: 1rem auto;
     padding: 1rem;
   }
   
-  .hero-content h1 {
+  .pp-hero-content h1 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
   }
   
-  .hero-content p {
+  .pp-hero-content p {
     font-size: 0.9rem;
     line-height: 1.6;
     text-align: left; 
@@ -104,43 +103,43 @@
 }
 
 @media (max-width: 576px) {
-  .hero-content h1 {
+  .pp-hero-content h1 {
     font-size: 1.5rem;
   }
   
-  .hero-content p {
+  .pp-hero-content p {
     font-size: 0.85rem;
     line-height: 1.5;
   }
 }
 
 
-.hero-content {
+.pp-hero-content {
 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 
-.hero-content {
+.pp-hero-content {
   overflow-y: auto;
   max-height: 80vh; 
 }
 
 
-.hero-content::-webkit-scrollbar {
+.pp-hero-content::-webkit-scrollbar {
   width: 8px;
 }
 
-.hero-content::-webkit-scrollbar-track {
+.pp-hero-content::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
 }
 
-.hero-content::-webkit-scrollbar-thumb {
+.pp-hero-content::-webkit-scrollbar-thumb {
   background: var(--primary-color);
   border-radius: 4px;
 }
 
-.hero-content::-webkit-scrollbar-thumb:hover {
+.pp-hero-content::-webkit-scrollbar-thumb:hover {
   background: #d12a26;
 }

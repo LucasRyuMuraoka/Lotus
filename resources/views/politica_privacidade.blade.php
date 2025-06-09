@@ -20,9 +20,9 @@
 
     @livewire('customer-header')
 
-    <main class="c-main">
-        <section class="c-section-hero">
-            <div class="hero-content">
+    <main class="pp-c-main">
+        <section class="pp-c-section-hero">
+            <div class="pp-hero-content">
                 <h1 class="animate__animated animate__fadeInDown">Políticas de privacidade</h1>
                 <p class="animate__animated animate__fadeInDown">Bem-vindo ao Restaurante Lotus
                     O Restaurante Lotus, inscrito no CNPJ nº XX.XXX.XXX/0001-XX, localizado na [endereço completo], tem

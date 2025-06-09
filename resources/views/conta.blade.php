@@ -23,9 +23,9 @@
 
     @livewire('customer-header')
 
-    <main class="account-main">
-        <section class="account-section-hero">
-            <div class="account-hero-content">
+    <main class="profile-account-main">
+        <section class="profile-account-section-hero">
+            <div class="profile-account-hero-content">
                 <h1 class="animate__animated animate__fadeInDown">
                     Meu <span>Perfil</span>
                 </h1>
@@ -37,35 +37,35 @@
 
         <livewire:account-section />
 
-        <section class="c-section-help">
-            <div class="account-help-content">
+        <section class="profile-c-section-help">
+            <div class="profile-account-help-content">
                 <h2>Precisa de <span>ajuda</span>?</h2>
-                <div class="account-help-options">
-                    <div class="account-help-option">
-                        <div class="account-help-icon">
+                <div class="profile-account-help-options">
+                    <div class="profile-account-help-option">
+                        <div class="profile-account-help-icon">
                             <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="Atendimento"
                                 width="40" />
                         </div>
                         <h3>Atendimento</h3>
                         <p>Fale com um de nossos atendentes online.</p>
-                        <a href="#" class="account-help-btn">Acessar</a>
+                        <a href="#" class="profile-account-help-btn">Acessar</a>
                     </div>
-                    <div class="account-help-option">
-                        <div class="account-help-icon">
+                    <div class="profile-account-help-option">
+                        <div class="profile-account-help-icon">
                             <img src="https://cdn-icons-png.flaticon.com/512/4712/4712139.png" alt="FAQ" width="40" />
                         </div>
                         <h3>FAQ</h3>
                         <p>Confira as perguntas mais frequentes.</p>
-                        <a href="#" class="account-help-btn">Acessar</a>
+                        <a href="#" class="profile-account-help-btn">Acessar</a>
                     </div>
-                    <div class="account-help-option">
-                        <div class="account-help-icon">
+                    <div class="profile-account-help-option">
+                        <div class="profile-account-help-icon">
                             <img src="https://cdn-icons-png.flaticon.com/512/1384/1384023.png" alt="WhatsApp"
                                 width="40" />
                         </div>
                         <h3>WhatsApp</h3>
                         <p>Envie sua dúvida por WhatsApp.</p>
-                        <a href="#" class="account-help-btn">Enviar</a>
+                        <a href="#" class="profile-account-help-btn">Enviar</a>
                     </div>
                 </div>
             </div>
