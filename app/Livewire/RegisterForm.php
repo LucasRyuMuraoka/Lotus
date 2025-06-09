@@ -17,23 +17,53 @@ class RegisterForm extends Component
 
     public function register()
     {
+        try {
+            $this->validate([
+                'name' => 'required|string|max:255',
+                'email' => 'required|email|unique:users,email',
+                'password' => 'required|confirmed|min:5'
+            ], [
+                'name.required' => 'O nome é obrigatório.',
+                'email.required' => 'O e-mail é obrigatório.',
+                'email.email' => 'Digite um e-mail válido.',
+                'email.unique' => 'Este e-mail já está em uso.',
+                'password.required' => 'A senha é obrigatória.',
+                'password.confirmed' => 'As senhas não coincidem.',
+                'password.min' => 'A senha deve ter pelo menos 5 caracteres.',
+            ]);
 
-        $this->validate([
-            'name'=>'required|string|max:255',
-            'email'=>'required|email|unique:users,email',
-            'password'=>'required|confirmed|min:5'
-        ]);
+            $user = User::create([
+                'name' => $this->name,
+                'email' => $this->email,
+                'password' => Hash::make($this->password),
+                'role' => 'customer',
+            ]);
 
-        $user = User::create([
-            'name' => $this->name,
-            'email' => $this->email,
-            'password' => Hash::make($this->password),
-            'role' => 'customer',
-        ]);
+            Auth::login($user);
 
-        Auth::login($user);
+            $this->dispatch('show-notification', [
+                'message' => 'Conta criada com sucesso! Redirecionando...',
+                'type' => 'success',
+                'duration' => 3000
+            ]);
 
-        return redirect()->route('cardapio');
+            $this->js('setTimeout(() => { window.location.href = "' . route('cardapio') . '"; }, 2000);');
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            $errors = $e->validator->errors()->all();
+            $errorMessage = implode(' ', $errors);
+
+            $this->dispatch('show-notification', [
+                'message' => $errorMessage,
+                'type' => 'error',
+                'duration' => 6000
+            ]);
+        } catch (\Exception $e) {
+            $this->dispatch('show-notification', [
+                'message' => 'Erro interno. Tente novamente.',
+                'type' => 'error',
+                'duration' => 5000
+            ]);
+        }
     }
 
     public function render()

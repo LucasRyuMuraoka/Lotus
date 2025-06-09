@@ -15,108 +15,55 @@ function togglePassword() {
   }
 }
 
-/*
-
-function showError(message) {
-  const errorDiv = document.getElementById("errorMessage");
-  errorDiv.textContent = message;
-  errorDiv.style.display = "block";
-  errorDiv.classList.add("animate__animated", "animate__shakeX");
-
-  setTimeout(() => {
-    errorDiv.classList.remove("animate__shakeX");
-  }, 1000);
-}
-
-function hideError() {
-  const errorDiv = document.getElementById("errorMessage");
-  errorDiv.style.display = "none";
-}
-
-// Validação do formulário
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  hideError();
-
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-  // Validação básica
-  if (!email || !password) {
-    showError("Por favor, preencha todos os campos.");
-    return;
-  }
-
-  if (!email.includes("@")) {
-    showError("Por favor, insira um e-mail válido.");
-    return;
-  }
-
-  // Simulação de login
-  const button = e.target.querySelector(".login-btn");
-  const originalText = button.textContent;
-
-  button.textContent = "Entrando...";
-  button.style.background =
-    "linear-gradient(135deg, var(--warning-color) 0%, #f57c00 100%)";
-  button.disabled = true;
-
-  setTimeout(() => {
-    // Simulação de credenciais
-    if (email === "admin@lotus.com" && password === "123456") {
-      button.textContent = "Sucesso!";
-      button.style.background =
-        "linear-gradient(135deg, var(--success-color) 0%, #45a049 100%)";
-
-      setTimeout(() => {
-        alert("Login realizado com sucesso! Bem-vindo ao Lotus!");
-        // Aqui você redirecionaria para o dashboard
-      }, 1000);
-    } else {
-      showError("E-mail ou senha incorretos. Tente novamente.");
-      button.textContent = originalText;
-      button.style.background =
-        "linear-gradient(135deg, var(--primary-color) 0%, #e53e3a 100%)";
-      button.disabled = false;
+function showNotification(message, type = 'success', duration = 4000) {
+    const existingPopup = document.querySelector('.notification-popup');
+    if (existingPopup) {
+        existingPopup.remove();
     }
-  }, 2000);
-});
 
-// Efeitos de foco nos inputs
-document.querySelectorAll(".form-input").forEach((input) => {
-  input.addEventListener("focus", function () {
-    this.parentElement.style.transform = "scale(1.02)";
-    this.parentElement.style.transition = "transform 0.3s ease";
-  });
+    const popup = document.createElement('div');
+    popup.className = `notification-popup ${type}`;
+    
+    const icon = type === 'success' ? '✓' : '⚠';
+    
+    const displayMessage = message || 'Operação realizada com sucesso!';
+    
+    popup.innerHTML = `
+        <span class="icon">${icon}</span>
+        <span class="message">${displayMessage}</span>
+        <button class="close-btn" onclick="closeNotification(this.parentElement)">&times;</button>
+    `;
 
-  input.addEventListener("blur", function () {
-    this.parentElement.style.transform = "scale(1)";
-  });
-});
+    document.body.appendChild(popup);
 
-// Auto-hide error message quando o usuário começar a digitar
-document.querySelectorAll(".form-input").forEach((input) => {
-  input.addEventListener("input", hideError);
-});
+    setTimeout(() => {
+        popup.classList.add('show');
+    }, 100);
 
-function forgotPassword() {
-  const email = document.getElementById("email").value;
-  if (email) {
-    alert(`Instruções de recuperação de senha foram enviadas para: ${email}`);
-  } else {
-    alert(
-      'Por favor, insira seu e-mail primeiro e depois clique em "Esqueci minha senha".'
-    );
-    document.getElementById("email").focus();
-  }
+    setTimeout(() => {
+        closeNotification(popup);
+    }, duration);
 }
 
-// Easter egg: credenciais de demonstração
-document.addEventListener("keydown", function (e) {
-  if (e.ctrlKey && e.shiftKey && e.key === "D") {
-    alert(
-      "Credenciais de demonstração:\nE-mail: admin@lotus.com\nSenha: 123456"
-    );
-  }
+function closeNotification(popup) {
+    if (popup && popup.classList.contains('notification-popup')) {
+        popup.classList.remove('show');
+        setTimeout(() => {
+            if (popup.parentNode) {
+                popup.parentNode.removeChild(popup);
+            }
+        }, 300);
+    }
+}
+
+// Event listener para Livewire
+document.addEventListener('livewire:initialized', () => {
+    Livewire.on('show-notification', (event) => {
+        const data = event.detail ? event.detail : event;
+        const message = data.message || data[0]?.message || 'Operação realizada!';
+        const type = data.type || data[0]?.type || 'success';
+        const duration = data.duration || data[0]?.duration || 5000;
+        
+        showNotification(message, type, duration);
+    });
 });
-*/

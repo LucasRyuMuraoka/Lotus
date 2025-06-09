@@ -15,39 +15,67 @@ class LoginForm extends Component
 
     public function login()
     {
-
         $guestCart = session()->get('cart', []);
 
-        $credentials = $this->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
+        try {
+            $credentials = $this->validate([
+                'email' => 'required|email',
+                'password' => 'required',
+            ]);
 
-        if (Auth::attempt($credentials)) {
-            session()->regenerate();
+            if (Auth::attempt($credentials)) {
+                session()->regenerate();
 
-            $user = Auth::user();
+                $user = Auth::user();
 
-            $this->mergeCart($guestCart, $user);
+                $this->mergeCart($guestCart, $user);
 
-            session()->forget('cart');
+                session()->forget('cart');
 
-            return redirect()->to($user->role === 'admin' ? '/dashboard' : '/cardapio');
+                $this->dispatch('show-notification', [
+                    'message' => 'Login realizado com sucesso! Redirecionando...',
+                    'type' => 'success',
+                    'duration' => 3000
+                ]);
+
+                $redirectUrl = $user->role === 'admin' ? '/dashboard' : '/cardapio';
+                $this->js('setTimeout(() => { window.location.href = "' . $redirectUrl . '"; }, 2000);');
+
+                return;
+            }
+
+            $this->dispatch('show-notification', [
+                'message' => 'E-mail ou senha incorretos.',
+                'type' => 'error',
+                'duration' => 5000
+            ]);
+
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            $errors = $e->validator->errors()->all();
+            $errorMessage = 'Preencha todos os campos corretamente: ' . implode(', ', $errors);
+            
+            $this->dispatch('show-notification', [
+                'message' => $errorMessage,
+                'type' => 'error',
+                'duration' => 5000
+            ]);
+        } catch (\Exception $e) {
+            $this->dispatch('show-notification', [
+                'message' => 'Erro interno. Tente novamente.',
+                'type' => 'error',
+                'duration' => 5000
+            ]);
         }
-
-        $this->addError('email', 'E-mail ou senha incorretos.');
     }
 
     protected function mergeCart($guestCart, User $user)
     {
-
         $cart = Cart::firstOrCreate(
             ['user_id' => $user->id, 'status' => 'active'],
             ['status' => 'active']
         );
 
         foreach ($guestCart as $productId => $item) {
-
             $existing = $cart->items()->where('product_id', $productId)->first();
 
             if ($existing) {

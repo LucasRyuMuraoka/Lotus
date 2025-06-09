@@ -14,35 +14,37 @@
 </head>
 
 <body>
+    <div class="login-page-wrapper">
 
-    <div class="floating-particle"></div>
-    <div class="floating-particle"></div>
-    <div class="floating-particle"></div>
+        <div class="floating-particle"></div>
+        <div class="floating-particle"></div>
+        <div class="floating-particle"></div>
 
-    <div class="login-container animate__animated animate__fadeInUp">
-        <div class="logo-section animate__animated animate__fadeInDown animate__delay-1s">
-            <div class="logo">LOTUS</div>
-            <div class="tagline">Experiência gastronômica Oriental única</div>
+        <div class="login-container animate__animated animate__fadeInUp">
+            <div class="logo-section animate__animated animate__fadeInDown animate__delay-1s">
+                <div class="logo">LOTUS</div>
+                <div class="tagline">Experiência gastronômica Oriental única</div>
+            </div>
+
+            <div class="welcome-text animate__animated animate__fadeIn animate__delay-2s">
+                Bem-vindo de volta
+            </div>
+            <div class="subtitle animate__animated animate__fadeIn animate__delay-2s">
+                Faça login para continuar sua jornada gastronômica
+            </div>
+
+            <div class="error-message" id="errorMessage"></div>
+
+            <livewire:login-form />
+
+            <div class="signup-link animate__animated animate__fadeIn animate__delay-6s">
+                Não tem uma conta? <a href="{{ route('registro') }}">Criar conta</a>
+            </div>
         </div>
 
-        <div class="welcome-text animate__animated animate__fadeIn animate__delay-2s">
-            Bem-vindo de volta
-        </div>
-        <div class="subtitle animate__animated animate__fadeIn animate__delay-2s">
-            Faça login para continuar sua jornada gastronômica
-        </div>
-
-        <div class="error-message" id="errorMessage"></div>
-
-        <livewire:login-form />
-
-        <div class="signup-link animate__animated animate__fadeIn animate__delay-6s">
-            Não tem uma conta? <a href="{{ route('registro') }}">Criar conta</a>
-        </div>
+        <script src="{{ asset('assets/js/login.js') }}"></script>
+        @livewireScripts
     </div>
-
-    <script src="{{ asset('assets/js/login.js') }}"></script>
-    @livewireScripts
 </body>
 
 </html>
