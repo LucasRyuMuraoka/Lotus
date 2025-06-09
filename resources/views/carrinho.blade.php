@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/carrinho.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="icon" href="{{ Asset('/assets/images/icon.png') }}" />
-    <script src="{{ asset('assets/js/carrinho.js') }}"></script> 
 
     <title>Lotus - Carrinho</title>
     @livewireStyles
@@ -44,6 +43,7 @@
 
     @livewireScripts
     @stack('scripts')
+    <script src="{{ asset('assets/js/carrinho.js') }}"></script> 
 </body>
 
 </html>

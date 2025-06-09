@@ -42,8 +42,8 @@
             </div>
         </div>
 
-        <script src="{{ asset('assets/js/login.js') }}"></script>
         @livewireScripts
+        <script src="{{ asset('assets/js/login.js') }}"></script>
     </div>
 </body>
 

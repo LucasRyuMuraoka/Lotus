@@ -37,8 +37,8 @@
             </div>
         </div>
 
-        <script src="{{ asset('assets/js/cadastro.js') }}"></script>
         @livewireScripts
+        <script src="{{ asset('assets/js/cadastro.js') }}"></script>
     </div>
 </body>
 
